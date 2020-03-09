@@ -23,8 +23,25 @@
 \subsection{System Attacks}
 \section{Summary of Findings}
 
-\chapter{Attack Narrative}
+\chapter{Key Findings}
 \section{Auction Site}
+\subsection{Path Traversal}
+\subsubsection{Security Implications / Risk Level}
+Path traversal allows for arbitrary file read across the system, for any files readable by the apache user (www-data). This is dangerous as it could potentially leak sensitive company data, as well as user data. If combined with other vulnerabilities, such as incorrect permissions on log files, it is possible to achieve Remote Code Execution through malicious log read/write.\\
+Overall, the execution of this exploit is trivial, and the repercussions are potentially serious but not disasterous. Due to this, the risk level of this exploit is evaluated to be \textbf{medium}.
+\subsubsection{Cause of Vulnerability}
+The vulnerability is caused by the method used to retrieve and display image files on the website. Instead of directly referencing the image file through the 'src' field on an 'img' HTML tag, a PHP script is instead used to include the file.\\ 
+While using PHP include scripts may not normally be dangerous, the file name to be retrieved can be edited by the user, allowing them to easily select which file should be displayed. A lack of filter/extension whitelist makes this even more potent.
+\subsubsection{Steps to Replicate}
+The vulner
+\subsection{SQL Injection}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Replicate}
+\subsection{Weak Authentication}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Replicate}
 \section{SRV1}
 \section{SRV2}
 \section{Ubuntu Client}
