@@ -17,18 +17,18 @@
 \contentsline {subsection}{\numberline {3.1.2}SQL Injection}{8}%
 \contentsline {subsubsection}{Security Implications / Risk Level}{8}%
 \contentsline {subsubsection}{Cause of Vulnerability}{8}%
-\contentsline {subsubsection}{Steps to Replicate}{8}%
-\contentsline {subsection}{\numberline {3.1.3}Weak Authentication}{8}%
-\contentsline {subsubsection}{Security Implications / Risk Level}{8}%
-\contentsline {subsubsection}{Cause of Vulnerability}{8}%
-\contentsline {subsubsection}{Steps to Replicate}{8}%
-\contentsline {section}{\numberline {3.2}SRV1}{8}%
-\contentsline {section}{\numberline {3.3}SRV2}{8}%
-\contentsline {section}{\numberline {3.4}Ubuntu Client}{8}%
-\contentsline {chapter}{\numberline {4}Recommendations}{9}%
-\contentsline {section}{\numberline {4.1}Auction Site}{9}%
-\contentsline {section}{\numberline {4.2}SRV1}{9}%
-\contentsline {section}{\numberline {4.3}SRV2}{9}%
-\contentsline {section}{\numberline {4.4}Ubuntu Client}{9}%
-\contentsline {chapter}{\numberline {5}Conclusion}{10}%
-\contentsline {chapter}{\numberline {6}References}{11}%
+\contentsline {subsubsection}{Steps to Replicate}{9}%
+\contentsline {subsection}{\numberline {3.1.3}Weak Authentication}{10}%
+\contentsline {subsubsection}{Security Implications / Risk Level}{10}%
+\contentsline {subsubsection}{Cause of Vulnerability}{10}%
+\contentsline {subsubsection}{Steps to Replicate}{10}%
+\contentsline {section}{\numberline {3.2}SRV1}{11}%
+\contentsline {section}{\numberline {3.3}SRV2}{11}%
+\contentsline {section}{\numberline {3.4}Ubuntu Client}{11}%
+\contentsline {chapter}{\numberline {4}Recommendations}{12}%
+\contentsline {section}{\numberline {4.1}Auction Site}{12}%
+\contentsline {section}{\numberline {4.2}SRV1}{12}%
+\contentsline {section}{\numberline {4.3}SRV2}{12}%
+\contentsline {section}{\numberline {4.4}Ubuntu Client}{12}%
+\contentsline {chapter}{\numberline {5}Conclusion}{13}%
+\contentsline {chapter}{\numberline {6}References}{14}%

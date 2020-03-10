@@ -55,14 +55,50 @@ While using PHP include scripts may not normally be dangerous, the file name to 
 	\includegraphics[scale=0.4]{img/pathtraversal3.png}
 	\caption{Exploiting the file read}
 \end{figure}
+\pagebreak
 \subsection{SQL Injection}
 \subsubsection{Security Implications / Risk Level}
+SQL injection is a blanket term covering any kind of unintended user control over the SQL queries interacting with a database. This can manifest in many forms, such as:
+\begin{itemize}
+	\item Authentication bypass, where SQL queries can be modified to bypass authentication checks such as login forms.
+	\item Union injection, where the UNION keyword in SQL can be used to access data from other columns, tables, and databases.
+	\item Error based injection, where SQL errors are intentionally created in order to gain information about the database.
+	\item Blind injection, where queries that return TRUE or FALSE can be used to gain information about the database.
+\end{itemize}
+From the testing done, the website appears to be vulnerable to both authentication bypass, allowing attackers to log in to accounts, and blind injection, allowing for full read access across the database.\\
+The execution of these exploits are relatively easy with the use of tools like SQLmap, and the repercussions can be very serious, allowing attackers to log in to administrator accounts as well as reading any user/auction data from the database. Due to this, the risk level of this exploit is evaluated to be \textbf{high}.
 \subsubsection{Cause of Vulnerability}
+SQL injection vulnerabilities are a result of allowing unsanitised user input in to SQL queries. Sanitising SQL queries involves removing any kind of dangerous character from the input, such as quotation marks (single and double) and comment tags. If this is not done, attackers are able to modify queries in specific ways to allow them to perform SQL injection.\\
+One example of this would be performing an authentication bypass injection. A normal query may use a query like:
+\begin{verbatim}
+SELECT * FROM users WHERE username = '$inputname' AND password = 
+'$inputpass';
+\end{verbatim}
+If an attacker enters something like ' OR 1=1\# in to the username field, the query becomes:
+\begin{verbatim}
+SELECT * FROM users WHERE username = '' OR 1=1#;
+\end{verbatim}
+Which will pick the first username from the table and sign the attacker in.
 \subsubsection{Steps to Replicate}
+\begin{itemize}
+	\item For initial testing of SQL injection, a basic authentication bypass was used. The payload ' OR 1=1-- - was entered in to the username field (Fig. 3.4), which subsequently allowed access to the 'David' account, giving use of the admin panel as well (Fig. 3.5).
+\end{itemize}
+\pagebreak
+\begin{figure}
+	\centering
+	\includegraphics[scale=1]{img/sqli1.png}
+	\caption{Authentication bypass SQLi}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{img/sqli2.png}
+	\caption{Admin panel access gained}
+\end{figure}
 \subsection{Weak Authentication}
 \subsubsection{Security Implications / Risk Level}
 \subsubsection{Cause of Vulnerability}
 \subsubsection{Steps to Replicate}
+script used to bruteforce the cookies
 \section{SRV1}
 \section{SRV2}
 \section{Ubuntu Client}
@@ -76,5 +112,6 @@ While using PHP include scripts may not normally be dangerous, the file name to 
 \chapter{Conclusion}
 
 \chapter{References}
+
 
 \end{document}
