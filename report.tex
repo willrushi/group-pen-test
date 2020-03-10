@@ -40,17 +40,17 @@ While using PHP include scripts may not normally be dangerous, the file name to 
 		\item The image URL could then be opened, showing the ASCII representation of the binary content for the image file (Fig. 3.2).
 		\item Finally, the URL parameter 'file' could be replaced with a file path, allowing for arbitrary file read. In this example, the ../ operator was used to go up directories until root, and then the /etc/passwd file was navigated to (Fig. 3.3).
 \end{itemize}
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{img/pathtraversal1.png}
 	\caption{Inspecting the image}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{img/pathtraversal2.png}
 	\caption{Viewing the image contents}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{img/pathtraversal3.png}
 	\caption{Exploiting the file read}
@@ -82,21 +82,74 @@ Which will pick the first username from the table and sign the attacker in.
 \subsubsection{Steps to Replicate}
 \begin{itemize}
 	\item For initial testing of SQL injection, a basic authentication bypass was used. The payload ' OR 1=1-- - was entered in to the username field (Fig. 3.4), which subsequently allowed access to the 'David' account, giving use of the admin panel as well (Fig. 3.5).
+	\item For further testing, the tool SQLmap was used. This is a tool that automatically iterates through potential SQLi payloads, providing information such as DB names, table names, table data, SQL user names, and SQL version.
+	\item The first test done with SQLmap was checking if it detected SQL injection. The command used for this was \begin{verbatim}sqlmap -u "http://172.16.2.133/login.php?username=qwe&
+	password=qwe&Search=" --batch\end{verbatim}The results provided some information on the DB system and potential attacks it was vulnerable to (Fig. 3.6).
+	\item After this, the --passwords flag was used to test for DB users and retrieve any passwords if possible. SQLmap found a DB user named "auctuser", but had no access to the users table so could not retrieve a password (Fig. 3.7).
+	\item With no password found, the next step was to search for databases. The command used to do this was
+\begin{verbatim}
+sqlmap -u "http://172.16.2.133/login.php?username=qwe&
+password=qwe&Search=" --batch --databases
+\end{verbatim}
+	This successfully found the databases, returning three in total (Fig. 3.8). The first was the information\_schema DB, default in all installations of MySQL. The second was the auctionsrus DB, the one likely holding all info. The last was a test DB which also comes default with MySQL.
+	\item With the new information of the auctionsrs db, the --tables flag could be used to dump the table names for said DB. The command used for this was:
+\begin{verbatim}
+sqlmap -u "http://172.16.2.133/login.php?username=qwe&
+password=qwe&Search=" --batch -D auctionsrus --tables
+\end{verbatim}
+	This returned two tables found in the auctionsrus DB (Fig. 3.9). One, auction\_users, was likely to contain the user data for the site, while the other, auctions, was likely to contain the auction data.
+	\item Finally, the last step was to attempt to dump the data from the tables. As a proof of concept, the data from the users table was dumped using the command:
+\begin{verbatim}
+sqlmap -u "http://172.16.2.133/login.php?username=qwe&
+password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
+\end{verbatim}
+	This returned the full set of user data from the auction\_users table, including usernames, hashed passwords, user IDs, and user levels (Fig. 3.10). With the dump done, the full extent of the SQL injection was explored.
 \end{itemize}
 \pagebreak
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=1]{img/sqli1.png}
 	\caption{Authentication bypass SQLi}
 \end{figure}
-\begin{figure}
+\begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{img/sqli2.png}
 	\caption{Admin panel access gained}
 \end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.3]{img/sqlmap1.png}
+	\caption{Initial SQLmap testing}
+\end{figure}	
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/sqlmap1.5.png}
+	\caption{Finding DB users}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/sqlmap2.png}
+	\caption{Finding DB names}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.7]{img/sqlmap3.png}
+	\caption{Finding table names}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/sqlmap4.png}
+	\caption{Dumping user data}
+\end{figure}
+\pagebreak
 \subsection{Weak Authentication}
+q
+qweqwe
+qwe
 \subsubsection{Security Implications / Risk Level}
+qwe
 \subsubsection{Cause of Vulnerability}
+qwe
 \subsubsection{Steps to Replicate}
 script used to bruteforce the cookies
 \section{SRV1}
