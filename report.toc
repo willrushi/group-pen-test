@@ -1,34 +1,34 @@
-\contentsline {chapter}{\numberline {1}Introduction}{3}
-\contentsline {chapter}{\numberline {2}Executive Summary}{4}
-\contentsline {section}{\numberline {2.1}Planning}{4}
-\contentsline {subsection}{\numberline {2.1.1}Approach}{4}
-\contentsline {subsection}{\numberline {2.1.2}Scope}{4}
-\contentsline {subsection}{\numberline {2.1.3}Objectives}{4}
-\contentsline {section}{\numberline {2.2}Methodology}{4}
-\contentsline {subsection}{\numberline {2.2.1}Information Gathering}{4}
-\contentsline {subsection}{\numberline {2.2.2}System Attacks}{4}
-\contentsline {section}{\numberline {2.3}Summary of Findings}{4}
-\contentsline {chapter}{\numberline {3}Key Findings}{5}
-\contentsline {section}{\numberline {3.1}Auction Site}{5}
-\contentsline {subsection}{\numberline {3.1.1}Path Traversal}{5}
-\contentsline {subsubsection}{Security Implications / Risk Level}{5}
-\contentsline {subsubsection}{Cause of Vulnerability}{5}
-\contentsline {subsubsection}{Steps to Replicate}{5}
-\contentsline {subsection}{\numberline {3.1.2}SQL Injection}{6}
-\contentsline {subsubsection}{Security Implications / Risk Level}{6}
-\contentsline {subsubsection}{Cause of Vulnerability}{6}
-\contentsline {subsubsection}{Steps to Replicate}{6}
-\contentsline {subsection}{\numberline {3.1.3}Weak Authentication}{6}
-\contentsline {subsubsection}{Security Implications / Risk Level}{6}
-\contentsline {subsubsection}{Cause of Vulnerability}{6}
-\contentsline {subsubsection}{Steps to Replicate}{6}
-\contentsline {section}{\numberline {3.2}SRV1}{6}
-\contentsline {section}{\numberline {3.3}SRV2}{6}
-\contentsline {section}{\numberline {3.4}Ubuntu Client}{6}
-\contentsline {chapter}{\numberline {4}Recommendations}{7}
-\contentsline {section}{\numberline {4.1}Auction Site}{7}
-\contentsline {section}{\numberline {4.2}SRV1}{7}
-\contentsline {section}{\numberline {4.3}SRV2}{7}
-\contentsline {section}{\numberline {4.4}Ubuntu Client}{7}
-\contentsline {chapter}{\numberline {5}Conclusion}{8}
-\contentsline {chapter}{\numberline {6}References}{9}
+\contentsline {chapter}{\numberline {1}Introduction}{3}%
+\contentsline {chapter}{\numberline {2}Executive Summary}{4}%
+\contentsline {section}{\numberline {2.1}Planning}{4}%
+\contentsline {subsection}{\numberline {2.1.1}Approach}{4}%
+\contentsline {subsection}{\numberline {2.1.2}Scope}{4}%
+\contentsline {subsection}{\numberline {2.1.3}Objectives}{4}%
+\contentsline {section}{\numberline {2.2}Methodology}{4}%
+\contentsline {subsection}{\numberline {2.2.1}Information Gathering}{4}%
+\contentsline {subsection}{\numberline {2.2.2}System Attacks}{4}%
+\contentsline {section}{\numberline {2.3}Summary of Findings}{4}%
+\contentsline {chapter}{\numberline {3}Key Findings}{5}%
+\contentsline {section}{\numberline {3.1}Auction Site}{5}%
+\contentsline {subsection}{\numberline {3.1.1}Path Traversal}{5}%
+\contentsline {subsubsection}{Security Implications / Risk Level}{5}%
+\contentsline {subsubsection}{Cause of Vulnerability}{5}%
+\contentsline {subsubsection}{Steps to Replicate}{5}%
+\contentsline {subsection}{\numberline {3.1.2}SQL Injection}{8}%
+\contentsline {subsubsection}{Security Implications / Risk Level}{8}%
+\contentsline {subsubsection}{Cause of Vulnerability}{8}%
+\contentsline {subsubsection}{Steps to Replicate}{8}%
+\contentsline {subsection}{\numberline {3.1.3}Weak Authentication}{8}%
+\contentsline {subsubsection}{Security Implications / Risk Level}{8}%
+\contentsline {subsubsection}{Cause of Vulnerability}{8}%
+\contentsline {subsubsection}{Steps to Replicate}{8}%
+\contentsline {section}{\numberline {3.2}SRV1}{8}%
+\contentsline {section}{\numberline {3.3}SRV2}{8}%
+\contentsline {section}{\numberline {3.4}Ubuntu Client}{8}%
+\contentsline {chapter}{\numberline {4}Recommendations}{9}%
+\contentsline {section}{\numberline {4.1}Auction Site}{9}%
+\contentsline {section}{\numberline {4.2}SRV1}{9}%
+\contentsline {section}{\numberline {4.3}SRV2}{9}%
+\contentsline {section}{\numberline {4.4}Ubuntu Client}{9}%
+\contentsline {chapter}{\numberline {5}Conclusion}{10}%
+\contentsline {chapter}{\numberline {6}References}{11}%
