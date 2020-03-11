@@ -11,8 +11,9 @@
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Finding DB names}}{12}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Finding table names}}{12}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Dumping user data}}{13}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Bruteforcing the David user}}{14}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Bruteforcing the David user}}{15}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Cracking the hashes from SQLmap}}{15}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Enumerating the session IDs}}{15}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

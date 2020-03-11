@@ -143,7 +143,7 @@ password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 \end{figure}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.4]{img/sqlmap4.png}
+	\includegraphics[scale=0.3]{img/sqlmap4.png}
 	\caption{Dumping user data}
 \end{figure}
 \pagebreak
@@ -180,7 +180,7 @@ Cracking the password hashes from SQLmap
 \end{itemize}
 Enumerating the session IDs
 \begin{itemize}
-	\item To enumerate the session IDs, another custom python script was created (Appendix B). 
+	\item To enumerate the session IDs, another custom python script was created (Appendix B). This script enumerated through the numbers 0-1500, hashing each number of iteration. With the hash, the requests library was again used to send a GET request to the user\_account.php page, with the hash set as a cookie. The response text of the request could then be analysed - first to check if any sign in was detected, which would then print the hash used, user level, and username. It would then check if the admin panel text was present, and if so, print that the user was an admin. This method was used to gain access to all 3 auction accounts (Fig. 3.13).
 \end{itemize}
 \begin{figure}[!htb]
 	\centering
@@ -191,6 +191,11 @@ Enumerating the session IDs
 	\centering
 	\includegraphics[scale=0.5]{img/crackstation.png}
 	\caption{Cracking the hashes from SQLmap}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/cookie1.png}
+	\caption{Enumerating the session IDs}
 \end{figure}
 \section{SRV1}
 \section{SRV2}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.11)  11 MAR 2020 15:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7300 64-bit) (preloaded format=pdflatex 2020.3.11)  11 MAR 2020 15:50
 entering extended mode
 **./report.tex
 (report.tex
@@ -226,12 +226,7 @@ Package pdftex.def Info: img/sqlmap3.png  used on input line 141.
 File: img/sqlmap4.png Graphic file (type png)
 <use img/sqlmap4.png>
 Package pdftex.def Info: img/sqlmap4.png  used on input line 146.
-(pdftex.def)             Requested size: 442.34479pt x 99.97173pt.
-
-Overfull \hbox (97.34479pt too wide) in paragraph at lines 146--147
- [][] 
- []
-
+(pdftex.def)             Requested size: 331.76703pt x 74.9807pt.
 [11 <./img/sqli1.png> <./img/sqli2.png>]
 
 LaTeX Warning: Text page 12 contains only floats.
@@ -253,7 +248,12 @@ Overfull \hbox (37.80421pt too wide) in paragraph at lines 192--193
  [][] 
  []
 
-[14 <./img/bruteforce1.png>] [15 <./img/crackstation.png>]
+<img/cookie1.png, id=65, 327.47343pt x 220.57407pt>
+File: img/cookie1.png Graphic file (type png)
+<use img/cookie1.png>
+Package pdftex.def Info: img/cookie1.png  used on input line 197.
+(pdftex.def)             Requested size: 196.48558pt x 132.34544pt.
+[14] [15 <./img/bruteforce1.png> <./img/crackstation.png> <./img/cookie1.png>]
 Chapter 4.
 [16
 
@@ -263,23 +263,23 @@ Chapter 5.
 
 ]
 Chapter 6.
-<img/bruteforcescript.png, id=77, 980.16188pt x 566.86781pt>
+<img/bruteforcescript.png, id=78, 980.16188pt x 566.86781pt>
 File: img/bruteforcescript.png Graphic file (type png)
 <use img/bruteforcescript.png>
-Package pdftex.def Info: img/bruteforcescript.png  used on input line 211.
+Package pdftex.def Info: img/bruteforcescript.png  used on input line 216.
 (pdftex.def)             Requested size: 392.05782pt x 226.7431pt.
 
-Overfull \hbox (47.05782pt too wide) in paragraph at lines 211--212
+Overfull \hbox (47.05782pt too wide) in paragraph at lines 216--217
  [][] 
  []
 
-<img/cookiescript.png, id=78, 982.42032pt x 569.12625pt>
+<img/cookiescript.png, id=79, 982.42032pt x 569.12625pt>
 File: img/cookiescript.png Graphic file (type png)
 <use img/cookiescript.png>
-Package pdftex.def Info: img/cookiescript.png  used on input line 217.
+Package pdftex.def Info: img/cookiescript.png  used on input line 222.
 (pdftex.def)             Requested size: 392.96117pt x 227.64647pt.
 
-Overfull \hbox (47.96117pt too wide) in paragraph at lines 217--218
+Overfull \hbox (47.96117pt too wide) in paragraph at lines 222--223
  [][] 
  []
 
@@ -291,13 +291,13 @@ Chapter 7.
 
 ] (report.aux) ) 
 Here is how much of TeX's memory you used:
- 1292 strings out of 481556
- 20019 string characters out of 2912465
+ 1298 strings out of 481556
+ 20124 string characters out of 2912465
  252367 words of memory out of 3000000
- 16551 multiletter control sequences out of 15000+200000
+ 16556 multiletter control sequences out of 15000+200000
  538308 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,25p,545b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,25p,688b,216s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\18104878\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jk
 nappen/ec/dpi600\tcrm1000.pk><C:/Users/18104878/AppData/Local/Programs/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/18104878/AppData/Local/P
@@ -307,9 +307,9 @@ rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/18104878
 m/cmr12.pfb><C:/Users/18104878/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr17.pfb><C:/Users/18104878/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (21 pages, 2540957 bytes).
+Output written on report.pdf (21 pages, 2608673 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 114 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
