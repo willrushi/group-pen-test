@@ -25,8 +25,13 @@
 \section{Summary of Findings}
 
 \chapter{Key Findings}
+
+
 \section{Auction Site}
 This section covers the vulnerabilities found with the user-facing auction site.
+
+
+
 \subsection{Path Traversal}
 \subsubsection{Security Implications / Risk Level}
 Path traversal allows for arbitrary file read across the system, for any files readable by the apache user (www-data). This is dangerous as it could potentially leak sensitive company data, as well as user data. If combined with other vulnerabilities, such as incorrect permissions on log files, it is possible to achieve Remote Code Execution through malicious log read/write.\\
@@ -56,6 +61,9 @@ While using PHP include scripts may not normally be dangerous, the file name to 
 	\caption{Exploiting the file read}
 \end{figure}
 \pagebreak
+
+
+
 \subsection{SQL Injection}
 \subsubsection{Security Implications / Risk Level}
 SQL injection is a blanket term covering any kind of unintended user control over the SQL queries interacting with a database. This can manifest in many forms, such as:
@@ -103,7 +111,7 @@ password=qwe&Search=" --batch -D auctionsrus --tables
 sqlmap -u "http://172.16.2.133/login.php?username=qwe&
 password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 \end{verbatim}
-	This returned the full set of user data from the auction\_users table, including usernames, hashed passwords, user IDs, and user levels (Fig. 3.10). With the dump done, the full extent of the SQL injection was explored.
+	This returned the full set of user data from the auction\_users table, including usernames, MD5 hashed passwords (all cracked, with the one not displayed on the screenshot being '7331'), user IDs, and user levels (Fig. 3.10). With the dump done, the full extent of the SQL injection was explored.
 \end{itemize}
 \pagebreak
 \begin{figure}[!htb]
@@ -142,14 +150,24 @@ password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 	\caption{Dumping user data}
 \end{figure}
 \pagebreak
+
+
+
 \subsection{Weak Authentication}
-q
-qweqwe
-qwe
 \subsubsection{Security Implications / Risk Level}
-qwe
+Weak authentication is another blanket term for a multitude of security vulnerabilities surrounding the authentication systems on a website. Again, these exploits can manifest in a number of forms, and have varying levels of risk depending on the exploit.\\
+During testing a number of vulnerabilities were found that could be classed under weak authentication. These were:
+\begin{itemize}
+	\item Susceptibility to bruteforce attacks
+	\item Weakly hashed passwords
+	\item Weak session IDs
+\end{itemize}
 \subsubsection{Cause of Vulnerability}
-qwe
+The exploits found each had varying causes, depending on which part of the website was being interacted with. These included:
+\begin{itemize}
+	\item test
+\end{itemize}
+
 \subsubsection{Steps to Replicate}
 script used to bruteforce the cookies
 \section{SRV1}
