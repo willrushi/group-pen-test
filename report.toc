@@ -21,14 +21,17 @@
 \contentsline {subsection}{\numberline {3.1.3}Weak Authentication}{13}%
 \contentsline {subsubsection}{Security Implications / Risk Level}{13}%
 \contentsline {subsubsection}{Cause of Vulnerability}{13}%
-\contentsline {subsubsection}{Steps to Replicate}{13}%
-\contentsline {section}{\numberline {3.2}SRV1}{13}%
-\contentsline {section}{\numberline {3.3}SRV2}{13}%
-\contentsline {section}{\numberline {3.4}Ubuntu Client}{13}%
-\contentsline {chapter}{\numberline {4}Recommendations}{14}%
-\contentsline {section}{\numberline {4.1}Auction Site}{14}%
-\contentsline {section}{\numberline {4.2}SRV1}{14}%
-\contentsline {section}{\numberline {4.3}SRV2}{14}%
-\contentsline {section}{\numberline {4.4}Ubuntu Client}{14}%
-\contentsline {chapter}{\numberline {5}Conclusion}{15}%
-\contentsline {chapter}{\numberline {6}References}{16}%
+\contentsline {subsubsection}{Steps to Replicate}{14}%
+\contentsline {section}{\numberline {3.2}SRV1}{15}%
+\contentsline {section}{\numberline {3.3}SRV2}{15}%
+\contentsline {section}{\numberline {3.4}Ubuntu Client}{15}%
+\contentsline {chapter}{\numberline {4}Recommendations}{16}%
+\contentsline {section}{\numberline {4.1}Auction Site}{16}%
+\contentsline {section}{\numberline {4.2}SRV1}{16}%
+\contentsline {section}{\numberline {4.3}SRV2}{16}%
+\contentsline {section}{\numberline {4.4}Ubuntu Client}{16}%
+\contentsline {chapter}{\numberline {5}Conclusion}{17}%
+\contentsline {chapter}{\numberline {6}Appendices}{18}%
+\contentsline {section}{\numberline {6.1}Appendix A: Python bruteforce script}{18}%
+\contentsline {section}{\numberline {6.2}Appendix B: Session enumeration script}{18}%
+\contentsline {chapter}{\numberline {7}References}{20}%

@@ -29,9 +29,6 @@
 
 \section{Auction Site}
 This section covers the vulnerabilities found with the user-facing auction site.
-
-
-
 \subsection{Path Traversal}
 \subsubsection{Security Implications / Risk Level}
 Path traversal allows for arbitrary file read across the system, for any files readable by the apache user (www-data). This is dangerous as it could potentially leak sensitive company data, as well as user data. If combined with other vulnerabilities, such as incorrect permissions on log files, it is possible to achieve Remote Code Execution through malicious log read/write.\\
@@ -158,18 +155,43 @@ password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 Weak authentication is another blanket term for a multitude of security vulnerabilities surrounding the authentication systems on a website. Again, these exploits can manifest in a number of forms, and have varying levels of risk depending on the exploit.\\
 During testing a number of vulnerabilities were found that could be classed under weak authentication. These were:
 \begin{itemize}
-	\item Susceptibility to bruteforce attacks
-	\item Weakly hashed passwords
-	\item Weak session IDs
+	\item Susceptibility to bruteforce attacks: There appeared to be no rate-limiting or IP blocking functionality on the website login form, allowing for bruteforce attacks to be performed easily. These attacks could potentially result in user accounts being accessed by attackers.
+	\item Weakly hashed passwords: Using SQLmap, the users table was dumped, revealing that the passwords were hashed with unsalted MD5. This is a very weak algorithm, allowing it to be cracked quickly, as well as it having a plethora of rainbow tables already available online. This could result in hackers easily cracking passwords if they were able to retrieve the hashes.
+	\item Weak session IDs: Instead of a secure session ID, the session IDs used within the website are simply an MD5 hash of the user level for that account. This is extremely dangerous, as an attacker can easily enumerate through the user levels, testing each one and gaining access to every account with ease.
 \end{itemize}
+
 \subsubsection{Cause of Vulnerability}
 The exploits found each had varying causes, depending on which part of the website was being interacted with. These included:
 \begin{itemize}
-	\item test
+	\item Susceptibility to bruteforce attacks: The lack of a rate-limit or IP block on each account for the login form allows attackers to attempt as many times as they want, which makes bruteforce attacks possible. 
+	\item Weakly hashed passwords: The use of the MD5 hashing algorithm results in weak hashing security, which stems from either legacy code (from when MD5 was stronger) or poor security choices during the design of the system.
+	\item Weak session IDs: Again, this is another issue stemming from poor security choices during the design stage. Session IDs should be chosen as a completely random string, so hackers cannot collate multiple hashes and find patterns between them. Using unsalted MD5 as the hashing algorithm for this makes it even worse, as it is very easy to reverse engineer the original text from the hashes due to the nature of the user ID being numeric.
 \end{itemize}
 
 \subsubsection{Steps to Replicate}
-script used to bruteforce the cookies
+Bruteforcing the login form
+\begin{itemize}
+	\item To bruteforce the login form, a custom python script was used (Appendix A). This script read in usernames from a 'usernames.txt' file, and passwords from a provided wordlist (in this case english top 10000 wordlist). For each username, the script iterated through the passwords, sending a GET request using the python 'requests' library. If the text 'User Account' was found in the response text, this would indicate a successful sign in and print the found credentials before moving on to the next username.
+	Using the script successfully found the credentials for the admin user 'david' (Fig. 3.11), and could likely find the rest if a more extensive wordlist was used.	
+\end{itemize}
+Cracking the password hashes from SQLmap
+\begin{itemize}
+	\item The password hashes gained from SQLmap were unsalted MD5, so one of the first things to check would be an online rainbow table (a database of hashes and their corresponding plaintexts). In this case, the website 'Crackstation' was used to reverse all three hashes (Fig. 3.12).
+\end{itemize}
+Enumerating the session IDs
+\begin{itemize}
+	\item To enumerate the session IDs, another custom python script was created (Appendix B). 
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.7]{img/bruteforce1.png}
+	\caption{Bruteforcing the David user}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{img/crackstation.png}
+	\caption{Cracking the hashes from SQLmap}
+\end{figure}
 \section{SRV1}
 \section{SRV2}
 \section{Ubuntu Client}
@@ -181,6 +203,20 @@ script used to bruteforce the cookies
 \section{Ubuntu Client}
 
 \chapter{Conclusion}
+
+\chapter{Appendices}
+\section{Appendix A: Python bruteforce script}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/bruteforcescript.png}
+	\caption{Login form bruteforce script}
+\end{figure}
+\section{Appendix B: Session enumeration script}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/cookiescript.png}
+	\caption{Enumerating the session cookies}
+\end{figure}
 
 \chapter{References}
 
