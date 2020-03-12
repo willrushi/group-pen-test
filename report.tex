@@ -326,7 +326,20 @@ The cause of this vulnerability is simply not choosing a password that is sure e
 \end{figure}
 \pagebreak
 
+
+
 \section{SRV2 - Linux Server}
+\subsection{Username Enumeration}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Reproduce}
+
+\subsection{SSH Bruteforce}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Reproduce}
+
+
 
 \section{Ubuntu Client}
 \subsection{FTP Anonymous Access}
@@ -334,7 +347,24 @@ The cause of this vulnerability is simply not choosing a password that is sure e
 By default, FTP allows for access without password authentication through the 'anonymous' user. While this user does not have many permissions, it may be able to view some sensitive files and gain information about the host system.\\
 Due to the low level of permissions provided on the anonymous user, the risk for this exploit is \textbf{low}.
 \subsubsection{Cause of Vulnerability}
+The anonymous user is enabled by default on FTP, so if the administrator does not strictly disable it then it will be accessible by threat actors.
 \subsubsection{Steps to Reproduce}
+\begin{itemize}
+	\item Use an ftp client to enter the credentials for the server - using 172.16.2.133 as the hostname, 'anonymous' as the user, and no password.
+	\item The ftp connection will be made, allowing access to all files available to the anonymous user (Fig. 3.25).
+	\item Files can also be retrieved from the server - for example in the pub/incoming folder, there is a 'file.txt' file which can be retrieved (Fig 3.26).
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/ftp1.png}
+	\caption{FTP access using anonymous user}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/ftp2.png}
+	\caption{Retrieving files from the server}
+\end{figure}
 
 \subsection{SSH Bruteforce}
 \subsubsection{Security Implications / Risk Level}

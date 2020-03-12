@@ -25,8 +25,10 @@
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Cracking two hashes with rockyou + d3ad0ne}}{24}%
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Cracking one hash with rockyou hybrid attack}}{24}%
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Final results of hash cracking}}{24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces FTP access using anonymous user}}{26}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Retrieving files from the server}}{27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{28}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{29}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{30}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{31}%
