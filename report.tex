@@ -158,6 +158,7 @@ During testing a number of vulnerabilities were found that could be classed unde
 	\item Susceptibility to bruteforce attacks: There appeared to be no rate-limiting or IP blocking functionality on the website login form, allowing for bruteforce attacks to be performed easily. These attacks could potentially result in user accounts being accessed by attackers.
 	\item Weakly hashed passwords: Using SQLmap, the users table was dumped, revealing that the passwords were hashed with unsalted MD5. This is a very weak algorithm, allowing it to be cracked quickly, as well as it having a plethora of rainbow tables already available online. This could result in hackers easily cracking passwords if they were able to retrieve the hashes.
 	\item Weak session IDs: Instead of a secure session ID, the session IDs used within the website are simply an MD5 hash of the user level for that account. This is extremely dangerous, as an attacker can easily enumerate through the user levels, testing each one and gaining access to every account with ease.
+Due to the numerous exploits possible with weak authentication, and the dangerous ability to get in to other accounts (including admins), this exploit is evaluated to be a \textbf{high} risk.
 \end{itemize}
 
 \subsubsection{Cause of Vulnerability}
@@ -197,15 +198,61 @@ Enumerating the session IDs
 	\includegraphics[scale=0.6]{img/cookie1.png}
 	\caption{Enumerating the session IDs}
 \end{figure}
-\section{SRV1}
-\section{SRV2}
+
+\section{SRV1 - Windows Server}
+\subsection{RDP bruteforce}
+\subsubsection{Security Implications / Risk Level}
+RDP, or Remote Desktop Protocol, is a service used for remotely accessing machines across a network. While it is a useful tool for remote administration, it can be very heavily exploited by an attacker if not properly secured, as it gives almost full access to the machine if compromised. \\
+In this situation, the system was vulnerable to an RDP bruteforce. Using this vulnerability, it was possible to gain access to the 'ftp' user, creating a foothold in to the system which could be further exploited.\\
+Due to the risk of accessing accounts on the server machine, but still requiring passwords which could potentially mitigate the potential of exploitation, this exploit is classed at \textbf{medium} risk.
+\subsubsection{Cause of Vulnerability}
+This exploit stemmed from the RDP port (3389) being left open on the server. Having the default RDP port open allows hackers to easily identify the service running on the port, giving away a potential entry point to the system. From there, any bruteforce program such as hydra or ncrack can be used to begin bruteforce attempts on the service.
+\subsubsection{Steps to Replicate}
+\begin{itemize}
+	\item First, a list of potential usernames was collated from information gathered previously - this included usernames of known staff members (such as Stanley Jobson and Gabriel Shear), as well as common account names (such as guest and ftp). 
+	\item Next, the tool Hydra was used along with the rockyou.txt wordlist to start an RDP bruteforce, using the command 
+	\begin{verbatim}
+		hydra -t 4 -l ftp -P rockyou.txt rdp://172.16.2.135 -v
+	\end{verbatim}
+	This command allocates 4 tasks to the bruteforce, uses the username 'ftp' (each username was inputted manually), the password list as rockyou.txt, and the target as 172.16.2.135, the IP of the server.
+	\item After trying multiple other user accounts without success, the bruteforce eventually returned a set of credentials for the 'ftp' user - 'ftp:Abracadabra' (Fig. 3.14). These credentials were then used with the Linux utility 'rdesktop' to remote in to the machine, successfully gaining access to the server (Fig. 3.15).
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/rdp1.png}
+	\caption{Bruteforcing the ftp user credentials}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/rdp2.png}
+	\caption{Gaining access to the server through RDP}
+\end{figure}
+\subsection{Insecure privileges}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Replicate}
+rdesktop 172.16.2.135 -r disk:share=/root/Documents/pentest
+\subsection{Weak passwords}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Replicate}
+
+
+\section{SRV2 - Linux Server}
+
 \section{Ubuntu Client}
+\subsection{SSH bruteforce}
 
 \chapter{Recommendations}
 \section{Auction Site}
-\section{SRV1}
-\section{SRV2}
+\section{SRV1 - Windows Server}
+\subsection{RDP bruteforce}
+	change or close port
+\subsection{Insecure privileges}
+\subsection{Weak passwords}
+\section{SRV2 - Linux Server}
 \section{Ubuntu Client}
+\subsection{SSH bruteforce}
 
 \chapter{Conclusion}
 

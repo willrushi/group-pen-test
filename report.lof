@@ -1,22 +1,24 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Inspecting the image}}{6}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Viewing the image contents}}{7}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Exploiting the file read}}{7}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Authentication bypass SQLi}}{11}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Admin panel access gained}}{11}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Initial SQLmap testing}}{12}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Finding DB users}}{12}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Finding DB names}}{12}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Finding table names}}{12}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Dumping user data}}{13}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Bruteforcing the David user}}{15}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Cracking the hashes from SQLmap}}{15}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Enumerating the session IDs}}{15}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Inspecting the image}}{7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Viewing the image contents}}{8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Exploiting the file read}}{8}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Authentication bypass SQLi}}{12}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Admin panel access gained}}{12}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Initial SQLmap testing}}{13}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Finding DB users}}{13}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Finding DB names}}{13}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Finding table names}}{13}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Dumping user data}}{14}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Bruteforcing the David user}}{16}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Cracking the hashes from SQLmap}}{16}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Enumerating the session IDs}}{16}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Bruteforcing the ftp user credentials}}{17}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Gaining access to the server through RDP}}{18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{18}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{19}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{21}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{22}%
 \addvspace {10\p@ }
