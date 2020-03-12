@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.24)  12 MAR 2020 02:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.24)  12 MAR 2020 02:38
 entering extended mode
 **"d:/Uni work/Year 2/Group Pen Testing/report.tex"
 ("d:/Uni work/Year 2/Group Pen Testing/report.tex"
@@ -280,20 +280,20 @@ Chapter 6.
 <img/bruteforcescript.png, id=93, 980.16188pt x 566.86781pt>
 File: img/bruteforcescript.png Graphic file (type png)
 <use img/bruteforcescript.png>
-Package pdftex.def Info: img/bruteforcescript.png  used on input line 263.
+Package pdftex.def Info: img/bruteforcescript.png  used on input line 265.
 (pdftex.def)             Requested size: 392.05782pt x 226.7431pt.
 
-Overfull \hbox (47.05782pt too wide) in paragraph at lines 263--264
+Overfull \hbox (47.05782pt too wide) in paragraph at lines 265--266
  [][] 
  []
 
 <img/cookiescript.png, id=94, 982.42032pt x 569.12625pt>
 File: img/cookiescript.png Graphic file (type png)
 <use img/cookiescript.png>
-Package pdftex.def Info: img/cookiescript.png  used on input line 269.
+Package pdftex.def Info: img/cookiescript.png  used on input line 271.
 (pdftex.def)             Requested size: 392.96117pt x 227.64647pt.
 
-Overfull \hbox (47.96117pt too wide) in paragraph at lines 269--270
+Overfull \hbox (47.96117pt too wide) in paragraph at lines 271--272
  [][] 
  []
 
@@ -313,7 +313,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  55i,6n,32p,725b,220s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "d:/Uni work\Year 2\Group Pen Testing\report.pdf" (24 pages, 2696546 bytes).
+Output written on "d:/Uni work\Year 2\Group Pen Testing\report.pdf" (24 pages, 2696483 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

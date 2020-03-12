@@ -27,10 +27,10 @@
 \contentsline {subsubsection}{Security Implications / Risk Level}{16}%
 \contentsline {subsubsection}{Cause of Vulnerability}{17}%
 \contentsline {subsubsection}{Steps to Replicate}{17}%
-\contentsline {subsection}{\numberline {3.2.2}Insecure privileges}{17}%
-\contentsline {subsubsection}{Security Implications / Risk Level}{17}%
-\contentsline {subsubsection}{Cause of Vulnerability}{17}%
-\contentsline {subsubsection}{Steps to Replicate}{17}%
+\contentsline {subsection}{\numberline {3.2.2}Insecure privileges}{18}%
+\contentsline {subsubsection}{Security Implications / Risk Level}{18}%
+\contentsline {subsubsection}{Cause of Vulnerability}{18}%
+\contentsline {subsubsection}{Steps to Replicate}{18}%
 \contentsline {subsection}{\numberline {3.2.3}Weak passwords}{18}%
 \contentsline {subsubsection}{Security Implications / Risk Level}{18}%
 \contentsline {subsubsection}{Cause of Vulnerability}{18}%
