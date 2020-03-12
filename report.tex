@@ -2,6 +2,8 @@
 
 \usepackage{apalike}
 \usepackage{graphicx}
+\usepackage{url}
+\bibliographystyle{apalike} 
 
 \title{replace title}
 \author{replace author}
@@ -148,15 +150,13 @@ password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 \end{figure}
 \pagebreak
 
-
-
 \subsection{Weak Authentication}
 \subsubsection{Security Implications / Risk Level}
 Weak authentication is another blanket term for a multitude of security vulnerabilities surrounding the authentication systems on a website. Again, these exploits can manifest in a number of forms, and have varying levels of risk depending on the exploit.\\
 During testing a number of vulnerabilities were found that could be classed under weak authentication. These were:
 \begin{itemize}
 	\item Susceptibility to bruteforce attacks: There appeared to be no rate-limiting or IP blocking functionality on the website login form, allowing for bruteforce attacks to be performed easily. These attacks could potentially result in user accounts being accessed by attackers.
-	\item Weakly hashed passwords: Using SQLmap, the users table was dumped, revealing that the passwords were hashed with unsalted MD5. This is a very weak algorithm, allowing it to be cracked quickly, as well as it having a plethora of rainbow tables already available online. This could result in hackers easily cracking passwords if they were able to retrieve the hashes.
+	\item Weakly hashed passwords: Using SQLmap, the users table was dumped, revealing that the passwords were hashed with unsalted MD5. This is a very weak algorithm, allowing it to be cracked quickly, as well as it having a plethora of rainbow tables already available online. This could result in threat actors easily cracking passwords if they were able to retrieve the hashes.
 	\item Weak session IDs: Instead of a secure session ID, the session IDs used within the website are simply an MD5 hash of the user level for that account. This is extremely dangerous, as an attacker can easily enumerate through the user levels, testing each one and gaining access to every account with ease.
 Due to the numerous exploits possible with weak authentication, and the dangerous ability to get in to other accounts (including admins), this exploit is evaluated to be a \textbf{high} risk.
 \end{itemize}
@@ -166,7 +166,7 @@ The exploits found each had varying causes, depending on which part of the websi
 \begin{itemize}
 	\item Susceptibility to bruteforce attacks: The lack of a rate-limit or IP block on each account for the login form allows attackers to attempt as many times as they want, which makes bruteforce attacks possible. 
 	\item Weakly hashed passwords: The use of the MD5 hashing algorithm results in weak hashing security, which stems from either legacy code (from when MD5 was stronger) or poor security choices during the design of the system.
-	\item Weak session IDs: Again, this is another issue stemming from poor security choices during the design stage. Session IDs should be chosen as a completely random string, so hackers cannot collate multiple hashes and find patterns between them. Using unsalted MD5 as the hashing algorithm for this makes it even worse, as it is very easy to reverse engineer the original text from the hashes due to the nature of the user ID being numeric.
+	\item Weak session IDs: Again, this is another issue stemming from poor security choices during the design stage. Session IDs should be chosen as a completely random string, so threat actors cannot collate multiple hashes and find patterns between them. Using unsalted MD5 as the hashing algorithm for this makes it even worse, as it is very easy to reverse engineer the original text from the hashes due to the nature of the user ID being numeric.
 \end{itemize}
 
 \subsubsection{Steps to Replicate}
@@ -199,14 +199,16 @@ Enumerating the session IDs
 	\caption{Enumerating the session IDs}
 \end{figure}
 
+
+
 \section{SRV1 - Windows Server}
-\subsection{RDP bruteforce}
+\subsection{RDP Bruteforce}
 \subsubsection{Security Implications / Risk Level}
 RDP, or Remote Desktop Protocol, is a service used for remotely accessing machines across a network. While it is a useful tool for remote administration, it can be very heavily exploited by an attacker if not properly secured, as it gives almost full access to the machine if compromised. \\
 In this situation, the system was vulnerable to an RDP bruteforce. Using this vulnerability, it was possible to gain access to the 'ftp' user, creating a foothold in to the system which could be further exploited.\\
 Due to the risk of accessing accounts on the server machine, but still requiring passwords which could potentially mitigate the potential of exploitation, this exploit is classed at \textbf{medium} risk.
 \subsubsection{Cause of Vulnerability}
-This exploit stemmed from the RDP port (3389) being left open on the server. Having the default RDP port open allows hackers to easily identify the service running on the port, giving away a potential entry point to the system. From there, any bruteforce program such as hydra or ncrack can be used to begin bruteforce attempts on the service.
+This exploit stemmed from the RDP port (3389) being left open on the server. Having the default RDP port open allows threat actors to easily identify the service running on the port, giving away a potential entry point to the system. From there, any bruteforce program such as hydra or ncrack can be used to begin bruteforce attempts on the service.
 \subsubsection{Steps to Replicate}
 \begin{itemize}
 	\item First, a list of potential usernames was collated from information gathered previously - this included usernames of known staff members (such as Stanley Jobson and Gabriel Shear), as well as common account names (such as guest and ftp). 
@@ -229,30 +231,142 @@ This exploit stemmed from the RDP port (3389) being left open on the server. Hav
 \end{figure}
 \pagebreak
 
-\subsection{Insecure privileges}
+\subsection{Insecure Privileges}
 \subsubsection{Security Implications / Risk Level}
+Insecure privilege attacks occur when system privileges are distributed in a way that allows for attackers to exploit them moreso than if the privileges were configured correctly. Some examples of this include giving every user administrator privileges on a Windows machine, or making all files global R/W/X on a Linux machine. Doing this allows the attacker to exploit the machines much more heavily than if users had their permissions restricted, or if files were correctly configured.\\
+In this situation, the ftp user was given administrator privileges, which allowed for escalation to the system user as well as dumping the NT password hashes for every user on the machine. This is a huge security flaw, as if the ftp account was breached (as it was using the RDP bruteforce), the attacker gains full administrator privileges on the target machine. Due to this, the risk level was evaluated to be \textbf{high}.
 \subsubsection{Cause of Vulnerability}
+The cause of this vulnerability would come down to lack of security considerations when administering permissions to system users. As the ftp user should only be used for file transfers, there is no reason it should have administrative privileges.
 \subsubsection{Steps to Replicate}
-rdesktop 172.16.2.135 -r disk:share=/root/Documents/pentest
+\begin{itemize}
+	\item After logging in to the ftp user with rdesktop using the credentials from the RDP bruteforce, the user's privileges were checked with the 'net user ftp' command (Fig. 3.16).
+	\item From here, the next step was to use the PsExec tool to escalate to the system user. The PsTool suite is not installed by default, and with no internet connection, another method had to be used to transfer the files across. The method used in this case was by creating a linked RDP share with rdesktop, using the command
+	\begin{verbatim}
+		rdesktop 172.16.2.135 -r disk:share=/root/Documents/pentest
+	\end{verbatim}
+This linked the /root/Documents/pentest folder on the host machine to the 'share' folder on the network drive. From here, the PsExec files could be transferred from the host to the server (Fig. 3.17).
+	\item With PsExec now on the server, it could be used to elevate to system user by using the command
+	\begin{verbatim}
+	PsExec.exe -i -s cmd.exe
+	\end{verbatim}
+	With this entered, a new shell is spawned running as nt authority/system, giving full privileges over the server (Fig. 3.18).
+\end{itemize}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/privesc1.png}
+	\caption{Checking user permissions for ftp}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{img/privesc2.png}
+	\caption{Using a file share to transfer PsExec}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{img/privesc3.png}
+	\caption{Elevating to system}
+\end{figure}
+\pagebreak
+
 \subsection{Weak passwords}
 \subsubsection{Security Implications / Risk Level}
+Weak passwords involve passwords that do not stand up to modern hash cracking techniques. This can be caused by a number of factors, such as
+\begin{itemize}
+	\item Not having a long enough password - even passwords with up to 8 characters can be cracked feasibly within days \cite{passwordcracking}
+	\item Not using symbols and numbers - using symbols and numbers exponentially increases the keyspace required to crack the password. Not doing so will make it much easier for threat actors to potentially crack the plaintext.
+	\item Using common passwords - threat actors often use wordlists instead of plain bruteforce nowadays, with wordlists containing millions of common passwords available online such as rockyou. There are many ways to check if a password has already been leaked, such as the online tool HaveIBeenPwned, which collates password lists and allows users to check if a password appears in them.
+\end{itemize}
+These passwords would be crackable when using a weak hash type (such as NT) on a local machine, but doing so on a remote machine would not be as feasible. Therefore, the risk level is evaluated as \textbf{low}.
 \subsubsection{Cause of Vulnerability}
+The cause of this vulnerability is simply not choosing a password that is sure enough. Individual users are often blamed for creating weak passwords, but in practise the responsibility is on the administrators to set a strong password policy in order to force users to use a secure password. Doing this will ensure user passwords are much less likely to be cracked, preventing easy entry in to internal systems.
 \subsubsection{Steps to Replicate}
+\begin{itemize}
+	\item The first step was to extract the password hashes from the server. As system access was gained with PsExec, it was possible to use Pwdump7 to extract the hashes from the SAM directory in Windows. The Pwdump7 executable was transferred across using the same RDP file share used for PsExec, and then ran on the system to get the hashes (Fig. 3.19).
+	\item This produced seven hashes, one for each user on the machine. These hashes were then transferred to a text file on a host Windows 10 machine to prepare for cracking.
+	\item To crack the hashes, the tool 'hashcat' was used. This tool is especially suited for the job as it is GPU accelerated, meaning if a powerful GPU is available, it is possible to crack many more hashes than a CPU-bound program such as John the Ripper.
+	\item The first crack done with hashcat was using the 'rockyou.txt' wordlist, without any additional rules. Doing this yielded two passwords, 'ftp:Abracadabra' which was already gained through RDP bruteforce, and 'James Reisman:xylophone', which was a standard user account (Fig. 3.20).
+	\item The next crack was done using rockyou again, but with the 'best64' ruleset. A ruleset is a feature available in hashcat to mutate passwords from a wordlist, changing them in predictable ways - for example, the 'leetspeak' ruleset would go through each word in the list applying leetspeak to it (hello > h3ll0). The best64 ruleset utilises some of the most effective hashcat rules, while still running in a relatively short time. Using this, another hash was cracked - 'Administrator:zarpazos' (Fig. 3.21).
+	\item The next crack was similar to the last, but using the 'd3ad0ne' ruleset instead of best64. This ruleset is significantly larger, which trades off increased time to crack with more potential password candidates to go through. This ruleset produced a great result, giving another 2 cracked hashes - 'Holly Jobson:try2catchMe' and 'Ginger Knowles:G1ng3rK' (Fig. 3.22).
+	\item The final crack performed was with a 'hybrid attack'. This is done by taking a dictionary (rockyou.txt), and a 'mask' (a feature used in hashcat for expressing specific character sets). These two are then combined, resulting in a combination of a wordlist and a bruteforce. For this, the mask type ?a was used, which contains all lowercase, uppercase, numerical, and symbol characters.\\ 
+	The hybrid attack was repeated with varying lengths of bruteforce - as each bruteforce needs to be applied to every character in the wordlist, it can quickly become too large to compute. In this case, doing it with lengths up to 3 were completable in reasonable time.\\
+	This attack yielded one hash when executed with rockyou as the dictionary and ?a?a?a as the mask - 'Gabriel Shear:donttrustN31' (Fig. 3.23). This was the last hash that was cracked.
+	\item In total, six hashes were able to be cracked (Fig. 3.24). The seventh (Stanley Jobson's) seems stronger, and would require more testing to see if it is crackable.
+\end{itemize}
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.7]{img/hashdump1.png}
+	\caption{Using Pwdump7 to extract hashes}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{img/hashdump2.png}
+	\caption{Cracking two hashes with standard rockyou}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/hashdump3.png}
+	\caption{Cracking one hash with rockyou + best64}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/hashdump4.png}
+	\caption{Cracking two hashes with rockyou + d3ad0ne}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/hashdump5.png}
+	\caption{Cracking one hash with rockyou hybrid attack}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/hashdump6.png}
+	\caption{Final results of hash cracking}
+\end{figure}
+\pagebreak
 
 \section{SRV2 - Linux Server}
 
 \section{Ubuntu Client}
-\subsection{SSH bruteforce}
+\subsection{FTP Anonymous Access}
+\subsubsection{Security Implications / Risk Level}
+By default, FTP allows for access without password authentication through the 'anonymous' user. While this user does not have many permissions, it may be able to view some sensitive files and gain information about the host system.\\
+Due to the low level of permissions provided on the anonymous user, the risk for this exploit is \textbf{low}.
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Reproduce}
+
+\subsection{SSH Bruteforce}
+\subsubsection{Security Implications / Risk Level}
+\subsubsection{Cause of Vulnerability}
+
+\subsubsection{Steps to Reproduce}
+\subsection{Improper Access Controls}
+\subsubsection{Security Implications / Risk Level}
+	read conn.php
+	mysql access
+	xss
+\subsubsection{Cause of Vulnerability}
+\subsubsection{Steps to Reproduce}
+
+
+
 
 \chapter{Recommendations}
 \section{Auction Site}
+\subsection{Path Traversal}
+\subsection{SQL Injection}
+\subsection{Weak Authentication}
+
 \section{SRV1 - Windows Server}
 \subsection{RDP bruteforce}
 	change or close port
 \subsection{Insecure privileges}
+In a secure system, principles such as the 'rule of least privilege' should be used.
 \subsection{Weak passwords}
+
 \section{SRV2 - Linux Server}
+
 \section{Ubuntu Client}
 \subsection{SSH bruteforce}
 
@@ -272,7 +386,6 @@ rdesktop 172.16.2.135 -r disk:share=/root/Documents/pentest
 	\caption{Enumerating the session cookies}
 \end{figure}
 
-\chapter{References}
-
+\bibliography{pentest}
 
 \end{document}

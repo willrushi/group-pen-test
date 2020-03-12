@@ -16,9 +16,17 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Enumerating the session IDs}}{16}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Bruteforcing the ftp user credentials}}{17}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Gaining access to the server through RDP}}{18}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Checking user permissions for ftp}}{19}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Using a file share to transfer PsExec}}{20}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Elevating to system}}{20}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Using Pwdump7 to extract hashes}}{23}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Cracking two hashes with standard rockyou}}{23}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Cracking one hash with rockyou + best64}}{23}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Cracking two hashes with rockyou + d3ad0ne}}{24}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Cracking one hash with rockyou hybrid attack}}{24}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Final results of hash cracking}}{24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{21}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{22}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{28}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{29}%
