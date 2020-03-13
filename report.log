@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.24)  13 MAR 2020 02:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.24)  13 MAR 2020 02:45
 entering extended mode
 **./report.tex
 (report.tex
@@ -168,13 +168,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [3
 
-]
+] [4]
 Chapter 1.
-[4
+[5
 
 ]
 Chapter 2.
-[5
+[6
 
 ]
 Chapter 3.
@@ -186,10 +186,10 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
 
-[6
+[7
 
 ]
-<img/pathtraversal1.png, id=30, 965.10562pt x 555.57562pt>
+<img/pathtraversal1.png, id=33, 965.10562pt x 555.57562pt>
 File: img/pathtraversal1.png Graphic file (type png)
 <use img/pathtraversal1.png>
 Package pdftex.def Info: img/pathtraversal1.png  used on input line 49.
@@ -199,7 +199,7 @@ Overfull \hbox (41.03542pt too wide) in paragraph at lines 49--50
  [][] 
  []
 
-<img/pathtraversal2.png, id=31, 965.10562pt x 555.57562pt>
+<img/pathtraversal2.png, id=34, 965.10562pt x 555.57562pt>
 File: img/pathtraversal2.png Graphic file (type png)
 <use img/pathtraversal2.png>
 Package pdftex.def Info: img/pathtraversal2.png  used on input line 54.
@@ -209,7 +209,7 @@ Overfull \hbox (41.03542pt too wide) in paragraph at lines 54--55
  [][] 
  []
 
-<img/pathtraversal3.png, id=32, 965.10562pt x 555.57562pt>
+<img/pathtraversal3.png, id=35, 965.10562pt x 555.57562pt>
 File: img/pathtraversal3.png Graphic file (type png)
 <use img/pathtraversal3.png>
 Package pdftex.def Info: img/pathtraversal3.png  used on input line 59.
@@ -219,23 +219,23 @@ Overfull \hbox (41.03542pt too wide) in paragraph at lines 59--60
  [][] 
  []
 
-[7 <./img/pathtraversal1.png>]
+[8 <./img/pathtraversal1.png>]
 Overfull \vbox (27.25812pt too high) has occurred while \output is active []
 
 
-[8 <./img/pathtraversal2.png> <./img/pathtraversal3.png>] [9]
+[9 <./img/pathtraversal2.png> <./img/pathtraversal3.png>] [10]
 Overfull \hbox (36.99692pt too wide) in paragraph at lines 112--112
  []\OT1/cmtt/m/n/10 password=qwe&Search=" --batch -D auctionsrus -T auction_use
 rs --dump[] 
  []
 
-[10] [11]
-<img/sqli1.png, id=49, 316.93407pt x 25.59563pt>
+[11] [12]
+<img/sqli1.png, id=53, 316.93407pt x 25.59563pt>
 File: img/sqli1.png Graphic file (type png)
 <use img/sqli1.png>
 Package pdftex.def Info: img/sqli1.png  used on input line 118.
 (pdftex.def)             Requested size: 316.93329pt x 25.59555pt.
-<img/sqli2.png, id=50, 973.38657pt x 727.21687pt>
+<img/sqli2.png, id=54, 973.38657pt x 727.21687pt>
 File: img/sqli2.png Graphic file (type png)
 <use img/sqli2.png>
 Package pdftex.def Info: img/sqli2.png  used on input line 123.
@@ -245,12 +245,12 @@ Overfull \hbox (44.34773pt too wide) in paragraph at lines 123--124
  [][] 
  []
 
-<img/sqlmap1.png, id=51, 1034.36438pt x 510.40688pt>
+<img/sqlmap1.png, id=55, 1034.36438pt x 510.40688pt>
 File: img/sqlmap1.png Graphic file (type png)
 <use img/sqlmap1.png>
 Package pdftex.def Info: img/sqlmap1.png  used on input line 128.
 (pdftex.def)             Requested size: 310.3117pt x 153.12323pt.
-<img/sqlmap1.5.png, id=52, 971.12813pt x 206.27063pt>
+<img/sqlmap1.5.png, id=56, 971.12813pt x 206.27063pt>
 File: img/sqlmap1.5.png Graphic file (type png)
 <use img/sqlmap1.5.png>
 Package pdftex.def Info: img/sqlmap1.5.png  used on input line 133.
@@ -260,33 +260,33 @@ Overfull \hbox (43.44437pt too wide) in paragraph at lines 133--134
  [][] 
  []
 
-<img/sqlmap2.png, id=53, 527.72156pt x 129.48375pt>
+<img/sqlmap2.png, id=57, 527.72156pt x 129.48375pt>
 File: img/sqlmap2.png Graphic file (type png)
 <use img/sqlmap2.png>
 Package pdftex.def Info: img/sqlmap2.png  used on input line 138.
 (pdftex.def)             Requested size: 316.63538pt x 77.69083pt.
-<img/sqlmap3.png, id=54, 267.24844pt x 103.88812pt>
+<img/sqlmap3.png, id=58, 267.24844pt x 103.88812pt>
 File: img/sqlmap3.png Graphic file (type png)
 <use img/sqlmap3.png>
 Package pdftex.def Info: img/sqlmap3.png  used on input line 143.
 (pdftex.def)             Requested size: 187.07263pt x 72.72118pt.
-<img/sqlmap4.png, id=55, 1105.88156pt x 249.93375pt>
+<img/sqlmap4.png, id=59, 1105.88156pt x 249.93375pt>
 File: img/sqlmap4.png Graphic file (type png)
 <use img/sqlmap4.png>
 Package pdftex.def Info: img/sqlmap4.png  used on input line 148.
 (pdftex.def)             Requested size: 331.76703pt x 74.9807pt.
-[12 <./img/sqli1.png> <./img/sqli2.png>]
+[13 <./img/sqli1.png> <./img/sqli2.png>]
 
-LaTeX Warning: Text page 13 contains only floats.
+LaTeX Warning: Text page 14 contains only floats.
 
-[13 <./img/sqlmap1.png> <./img/sqlmap1.5.png> <./img/sqlmap2.png> <./img/sqlmap
-3.png>] [14 <./img/sqlmap4.png>]
-<img/bruteforce1.png, id=66, 313.17pt x 44.41594pt>
+[14 <./img/sqlmap1.png> <./img/sqlmap1.5.png> <./img/sqlmap2.png> <./img/sqlmap
+3.png>] [15 <./img/sqlmap4.png>]
+<img/bruteforce1.png, id=69, 313.17pt x 44.41594pt>
 File: img/bruteforce1.png Graphic file (type png)
 <use img/bruteforce1.png>
 Package pdftex.def Info: img/bruteforce1.png  used on input line 188.
 (pdftex.def)             Requested size: 219.21748pt x 31.09093pt.
-<img/crackstation.png, id=67, 765.6103pt x 85.82062pt>
+<img/crackstation.png, id=70, 765.6103pt x 85.82062pt>
 File: img/crackstation.png Graphic file (type png)
 <use img/crackstation.png>
 Package pdftex.def Info: img/crackstation.png  used on input line 193.
@@ -296,55 +296,55 @@ Overfull \hbox (37.80421pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
-<img/cookie1.png, id=68, 327.47343pt x 220.57407pt>
+<img/cookie1.png, id=71, 327.47343pt x 220.57407pt>
 File: img/cookie1.png Graphic file (type png)
 <use img/cookie1.png>
 Package pdftex.def Info: img/cookie1.png  used on input line 198.
 (pdftex.def)             Requested size: 196.48558pt x 132.34544pt.
-[15] [16 <./img/bruteforce1.png> <./img/crackstation.png> <./img/cookie1.png>]
+[16] [17 <./img/bruteforce1.png> <./img/crackstation.png> <./img/cookie1.png>]
 Overfull \hbox (0.3617pt too wide) in paragraph at lines 220--221
 \OT1/cmr/m/n/10 even-tu-ally re-turned a set of cre-den-tials for the 'ftp' use
 r - 'ftp:Abracadabra'
  []
 
-<img/rdp1.png, id=75, 540.51938pt x 65.49469pt>
+<img/rdp1.png, id=78, 540.51938pt x 65.49469pt>
 File: img/rdp1.png Graphic file (type png)
 <use img/rdp1.png>
 Package pdftex.def Info: img/rdp1.png  used on input line 224.
 (pdftex.def)             Requested size: 324.31412pt x 39.29709pt.
-<img/rdp2.png, id=77, 782.925pt x 611.28375pt>
+<img/rdp2.png, id=80, 782.925pt x 611.28375pt>
 File: img/rdp2.png Graphic file (type png)
 <use img/rdp2.png>
 Package pdftex.def Info: img/rdp2.png  used on input line 229.
 (pdftex.def)             Requested size: 313.16446pt x 244.50917pt.
-[17 <./img/rdp1.png>] [18 <./img/rdp2.png>]
-<img/privesc1.png, id=87, 349.305pt x 248.42813pt>
+[18 <./img/rdp1.png>] [19 <./img/rdp2.png>]
+<img/privesc1.png, id=90, 349.305pt x 248.42813pt>
 File: img/privesc1.png Graphic file (type png)
 <use img/privesc1.png>
 Package pdftex.def Info: img/privesc1.png  used on input line 257.
 (pdftex.def)             Requested size: 209.58461pt x 149.05801pt.
-<img/privesc2.png, id=88, 613.54219pt x 464.4853pt>
+<img/privesc2.png, id=91, 613.54219pt x 464.4853pt>
 File: img/privesc2.png Graphic file (type png)
 <use img/privesc2.png>
 Package pdftex.def Info: img/privesc2.png  used on input line 262.
 (pdftex.def)             Requested size: 306.77034pt x 232.24208pt.
-<img/privesc3.png, id=89, 529.22719pt x 402.00188pt>
+<img/privesc3.png, id=92, 529.22719pt x 402.00188pt>
 File: img/privesc3.png Graphic file (type png)
 <use img/privesc3.png>
 Package pdftex.def Info: img/privesc3.png  used on input line 267.
 (pdftex.def)             Requested size: 264.61295pt x 201.00044pt.
- [19 <./img/privesc1.png>]
+ [20 <./img/privesc1.png>]
 Overfull \vbox (16.04803pt too high) has occurred while \output is active []
 
 
-[20 <./img/privesc2.png> <./img/privesc3.png>]
+[21 <./img/privesc2.png> <./img/privesc3.png>]
 Overfull \hbox (31.21371pt too wide) in paragraph at lines 288--289
 \OT1/cmr/m/n/10 with-out any ad-di-tional rules. Do-ing this yielded two pass-w
 ords, 'ftp:Abracadabra'
  []
 
-[21]
-<img/hashdump1.png, id=101, 523.20468pt x 268.75406pt>
+[22]
+<img/hashdump1.png, id=104, 523.20468pt x 268.75406pt>
 File: img/hashdump1.png Graphic file (type png)
 <use img/hashdump1.png>
 Package pdftex.def Info: img/hashdump1.png  used on input line 299.
@@ -354,12 +354,12 @@ Overfull \hbox (21.24077pt too wide) in paragraph at lines 299--300
  [][] 
  []
 
-<img/hashdump2.png, id=102, 614.295pt x 201.00093pt>
+<img/hashdump2.png, id=105, 614.295pt x 201.00093pt>
 File: img/hashdump2.png Graphic file (type png)
 <use img/hashdump2.png>
 Package pdftex.def Info: img/hashdump2.png  used on input line 304.
 (pdftex.def)             Requested size: 307.14674pt x 100.50021pt.
-<img/hashdump3.png, id=103, 607.51968pt x 218.31563pt>
+<img/hashdump3.png, id=106, 607.51968pt x 218.31563pt>
 File: img/hashdump3.png Graphic file (type png)
 <use img/hashdump3.png>
 Package pdftex.def Info: img/hashdump3.png  used on input line 309.
@@ -369,7 +369,7 @@ Overfull \hbox (19.51462pt too wide) in paragraph at lines 309--310
  [][] 
  []
 
-<img/hashdump4.png, id=104, 609.77812pt x 267.24844pt>
+<img/hashdump4.png, id=107, 609.77812pt x 267.24844pt>
 File: img/hashdump4.png Graphic file (type png)
 <use img/hashdump4.png>
 Package pdftex.def Info: img/hashdump4.png  used on input line 314.
@@ -379,7 +379,7 @@ Overfull \hbox (20.86969pt too wide) in paragraph at lines 314--315
  [][] 
  []
 
-<img/hashdump5.png, id=105, 642.90187pt x 260.47313pt>
+<img/hashdump5.png, id=108, 642.90187pt x 260.47313pt>
 File: img/hashdump5.png Graphic file (type png)
 <use img/hashdump5.png>
 Package pdftex.def Info: img/hashdump5.png  used on input line 319.
@@ -389,26 +389,26 @@ Overfull \hbox (40.7441pt too wide) in paragraph at lines 319--320
  [][] 
  []
 
-<img/hashdump6.png, id=106, 465.99094pt x 125.71968pt>
+<img/hashdump6.png, id=109, 465.99094pt x 125.71968pt>
 File: img/hashdump6.png Graphic file (type png)
 <use img/hashdump6.png>
 Package pdftex.def Info: img/hashdump6.png  used on input line 324.
 (pdftex.def)             Requested size: 279.59671pt x 75.43237pt.
-[22]
+[23]
 
-LaTeX Warning: Text page 23 contains only floats.
+LaTeX Warning: Text page 24 contains only floats.
 
-[23 <./img/hashdump1.png> <./img/hashdump2.png> <./img/hashdump3.png>]
+[24 <./img/hashdump1.png> <./img/hashdump2.png> <./img/hashdump3.png>]
 Overfull \vbox (32.72046pt too high) has occurred while \output is active []
 
 
-[24 <./img/hashdump4.png> <./img/hashdump5.png> <./img/hashdump6.png>]
+[25 <./img/hashdump4.png> <./img/hashdump5.png> <./img/hashdump6.png>]
 Overfull \hbox (4.0839pt too wide) in paragraph at lines 342--343
 []\OT1/cmr/m/n/10 Files can also be re-trieved from the server - for ex-am-ple 
 in the pub/incoming
  []
 
-<img/ftp1.png, id=121, 911.65594pt x 723.45282pt>
+<img/ftp1.png, id=124, 911.65594pt x 723.45282pt>
 File: img/ftp1.png Graphic file (type png)
 <use img/ftp1.png>
 Package pdftex.def Info: img/ftp1.png  used on input line 347.
@@ -418,7 +418,7 @@ Overfull \hbox (19.65591pt too wide) in paragraph at lines 347--348
  [][] 
  []
 
-<img/ftp2.png, id=122, 907.13907pt x 718.93594pt>
+<img/ftp2.png, id=125, 907.13907pt x 718.93594pt>
 File: img/ftp2.png Graphic file (type png)
 <use img/ftp2.png>
 Package pdftex.def Info: img/ftp2.png  used on input line 352.
@@ -428,13 +428,13 @@ Overfull \hbox (17.8492pt too wide) in paragraph at lines 352--353
  [][] 
  []
 
-[25 <./img/ftp1.png>] [26 <./img/ftp2.png>]
-<img/133ssh1.png, id=129, 662.475pt x 88.07906pt>
+[26 <./img/ftp1.png>] [27 <./img/ftp2.png>]
+<img/133ssh1.png, id=132, 662.475pt x 88.07906pt>
 File: img/133ssh1.png Graphic file (type png)
 <use img/133ssh1.png>
 Package pdftex.def Info: img/133ssh1.png  used on input line 381.
 (pdftex.def)             Requested size: 331.2367pt x 44.03941pt.
-<img/133ssh2.png, id=130, 618.05907pt x 94.85437pt>
+<img/133ssh2.png, id=133, 618.05907pt x 94.85437pt>
 File: img/133ssh2.png Graphic file (type png)
 <use img/133ssh2.png>
 Package pdftex.def Info: img/133ssh2.png  used on input line 386.
@@ -444,13 +444,13 @@ Overfull \hbox (25.8383pt too wide) in paragraph at lines 386--387
  [][] 
  []
 
-[27 <./img/133ssh1.png> <./img/133ssh2.png>] [28]
-<img/xss1.png, id=137, 392.96812pt x 70.01157pt>
+[28 <./img/133ssh1.png> <./img/133ssh2.png>] [29]
+<img/xss1.png, id=140, 392.96812pt x 70.01157pt>
 File: img/xss1.png Graphic file (type png)
 <use img/xss1.png>
 Package pdftex.def Info: img/xss1.png  used on input line 413.
 (pdftex.def)             Requested size: 235.78268pt x 42.00725pt.
-<img/xss2.png, id=138, 901.11656pt x 48.93282pt>
+<img/xss2.png, id=141, 901.11656pt x 48.93282pt>
 File: img/xss2.png Graphic file (type png)
 <use img/xss2.png>
 Package pdftex.def Info: img/xss2.png  used on input line 418.
@@ -460,13 +460,13 @@ Overfull \hbox (15.44023pt too wide) in paragraph at lines 418--419
  [][] 
  []
 
-<img/xss3.png, id=139, 1030.60031pt x 577.40718pt>
+<img/xss3.png, id=142, 1030.60031pt x 577.40718pt>
 File: img/xss3.png Graphic file (type png)
 <use img/xss3.png>
 Package pdftex.def Info: img/xss3.png  used on input line 423.
 (pdftex.def)             Requested size: 309.18248pt x 173.22348pt.
-[29 <./img/xss1.png> <./img/xss2.png> <./img/xss3.png>]
-<img/userenum1.png, id=144, 624.08156pt x 406.51875pt>
+[30 <./img/xss1.png> <./img/xss2.png> <./img/xss3.png>]
+<img/userenum1.png, id=148, 624.08156pt x 406.51875pt>
 File: img/userenum1.png Graphic file (type png)
 <use img/userenum1.png>
 Package pdftex.def Info: img/userenum1.png  used on input line 447.
@@ -476,14 +476,14 @@ Overfull \hbox (29.45183pt too wide) in paragraph at lines 447--448
  [][] 
  []
 
-[30]
+[31]
 Overfull \hbox (14.74948pt too wide) in paragraph at lines 465--466
 []\OT1/cmr/m/n/10 A brute-force us-ing an ex-haus-tive low-er-case/uppercase/nu
 mbers/symbols
  []
 
-[31 <./img/userenum1.png>]
-<img/140ssh1.png, id=152, 651.18282pt x 103.13531pt>
+[32 <./img/userenum1.png>]
+<img/140ssh1.png, id=155, 651.18282pt x 103.13531pt>
 File: img/140ssh1.png Graphic file (type png)
 <use img/140ssh1.png>
 Package pdftex.def Info: img/140ssh1.png  used on input line 473.
@@ -493,17 +493,17 @@ Overfull \hbox (45.7127pt too wide) in paragraph at lines 473--474
  [][] 
  []
 
-[32 <./img/140ssh1.png>]
+[33 <./img/140ssh1.png>]
 Chapter 4.
-[33
-
-]
-Chapter 5.
 [34
 
 ]
+Chapter 5.
+[35
+
+]
 Chapter 6.
-<img/bruteforcescript.png, id=162, 980.16188pt x 566.86781pt>
+<img/bruteforcescript.png, id=165, 980.16188pt x 566.86781pt>
 File: img/bruteforcescript.png Graphic file (type png)
 <use img/bruteforcescript.png>
 Package pdftex.def Info: img/bruteforcescript.png  used on input line 507.
@@ -513,7 +513,7 @@ Overfull \hbox (47.05782pt too wide) in paragraph at lines 507--508
  [][] 
  []
 
-<img/cookiescript.png, id=163, 982.42032pt x 569.12625pt>
+<img/cookiescript.png, id=166, 982.42032pt x 569.12625pt>
 File: img/cookiescript.png Graphic file (type png)
 <use img/cookiescript.png>
 Package pdftex.def Info: img/cookiescript.png  used on input line 513.
@@ -523,15 +523,15 @@ Overfull \hbox (47.96117pt too wide) in paragraph at lines 513--514
  [][] 
  []
 
-(report.bbl [35
+(report.bbl [36
 
- <./img/bruteforcescript.png>] [36 <./img/cookiescript.png>]
+ <./img/bruteforcescript.png>] [37 <./img/cookiescript.png>]
 Underfull \hbox (badness 6001) in paragraph at lines 11--16
 \OT1/cmtt/m/n/10 com / support / s / article / Calculating-[]Password-[]Complex
 ity$\OT1/cmr/m/n/10 .  Last
  []
 
-) [37
+) [38
 
 ] (report.aux) ) 
 Here is how much of TeX's memory you used:
@@ -551,9 +551,9 @@ ll/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><
 C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb><C:/Users/skill/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (38 pages, 3824155 bytes).
+Output written on report.pdf (39 pages, 3824781 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
+ 202 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
