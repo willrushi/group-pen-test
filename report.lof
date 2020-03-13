@@ -3,7 +3,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Inspecting the image}}{7}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Viewing the image contents}}{8}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Exploiting the file read}}{8}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Exploiting the vulnerable file read}}{8}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Authentication bypass SQLi}}{12}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Admin panel access gained}}{12}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Initial SQLmap testing}}{13}%
@@ -25,10 +25,17 @@
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Cracking two hashes with rockyou + d3ad0ne}}{24}%
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Cracking one hash with rockyou hybrid attack}}{24}%
 \contentsline {figure}{\numberline {3.24}{\ignorespaces Final results of hash cracking}}{24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces FTP access using anonymous user}}{26}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Retrieving files from the server}}{27}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces FTP access using anonymous user}}{25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Retrieving files from the server}}{26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces kr\_kx cracked}}{27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces gshear cracked}}{27}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Viewing MySQL details}}{29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Injecting XSS through the DB}}{29}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Demonstrating XSS}}{29}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces Enumerating users}}{31}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces Enumerating users}}{32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{30}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{31}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Login form bruteforce script}}{35}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Enumerating the session cookies}}{36}%

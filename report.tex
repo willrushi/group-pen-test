@@ -34,7 +34,7 @@ This section covers the vulnerabilities found with the user-facing auction site.
 \subsection{Path Traversal}
 \subsubsection{Security Implications / Risk Level}
 Path traversal allows for arbitrary file read across the system, for any files readable by the apache user (www-data). This is dangerous as it could potentially leak sensitive company data, as well as user data. If combined with other vulnerabilities, such as incorrect permissions on log files, it is possible to achieve Remote Code Execution through malicious log read/write.\\
-Overall, the execution of this exploit is trivial, and the repercussions are potentially serious but not disasterous. Due to this, the risk level of this exploit is evaluated to be \textbf{medium}.
+Overall, the execution of this vulnerability is trivial, and the repercussions are potentially serious but not disastrous. Due to this, the risk level of this vulnerability is evaluated to be \textbf{medium}.
 \subsubsection{Cause of Vulnerability}
 The vulnerability is caused by the method used to retrieve and display image files on the website. Instead of directly referencing the image file through the 'src' field on an 'img' HTML tag, a PHP script is instead used to include the file.\\ 
 While using PHP include scripts may not normally be dangerous, the file name to be retrieved can be edited by the user, allowing them to easily select which file should be displayed. A lack of filter/extension whitelist makes this even more potent.
@@ -57,7 +57,7 @@ While using PHP include scripts may not normally be dangerous, the file name to 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.4]{img/pathtraversal3.png}
-	\caption{Exploiting the file read}
+	\caption{Exploiting the vulnerable file read}
 \end{figure}
 \pagebreak
 
@@ -73,7 +73,7 @@ SQL injection is a blanket term covering any kind of unintended user control ove
 	\item Blind injection, where queries that return TRUE or FALSE can be used to gain information about the database.
 \end{itemize}
 From the testing done, the website appears to be vulnerable to both authentication bypass, allowing attackers to log in to accounts, and blind injection, allowing for full read access across the database.\\
-The execution of these exploits are relatively easy with the use of tools like SQLmap, and the repercussions can be very serious, allowing attackers to log in to administrator accounts as well as reading any user/auction data from the database. Due to this, the risk level of this exploit is evaluated to be \textbf{high}.
+The execution of these vulnerabilities are relatively easy with the use of tools like SQLmap, and the repercussions can be very serious, allowing attackers to log in to administrator accounts as well as reading any user/auction data from the database. Due to this, the risk level of this vulnerability is evaluated to be \textbf{high}.
 \subsubsection{Cause of Vulnerability}
 SQL injection vulnerabilities are a result of allowing unsanitised user input in to SQL queries. Sanitising SQL queries involves removing any kind of dangerous character from the input, such as quotation marks (single and double) and comment tags. If this is not done, attackers are able to modify queries in specific ways to allow them to perform SQL injection.\\
 One example of this would be performing an authentication bypass injection. A normal query may use a query like:
@@ -152,17 +152,17 @@ password=qwe&Search=" --batch -D auctionsrus -T auction_users --dump
 
 \subsection{Weak Authentication}
 \subsubsection{Security Implications / Risk Level}
-Weak authentication is another blanket term for a multitude of security vulnerabilities surrounding the authentication systems on a website. Again, these exploits can manifest in a number of forms, and have varying levels of risk depending on the exploit.\\
+Weak authentication is another blanket term for a multitude of security vulnerabilities surrounding the authentication systems on a website. Again, these vulnerabilities can manifest in a number of forms, and have varying levels of risk depending on the vulnerability.\\
 During testing a number of vulnerabilities were found that could be classed under weak authentication. These were:
 \begin{itemize}
 	\item Susceptibility to bruteforce attacks: There appeared to be no rate-limiting or IP blocking functionality on the website login form, allowing for bruteforce attacks to be performed easily. These attacks could potentially result in user accounts being accessed by attackers.
 	\item Weakly hashed passwords: Using SQLmap, the users table was dumped, revealing that the passwords were hashed with unsalted MD5. This is a very weak algorithm, allowing it to be cracked quickly, as well as it having a plethora of rainbow tables already available online. This could result in threat actors easily cracking passwords if they were able to retrieve the hashes.
 	\item Weak session IDs: Instead of a secure session ID, the session IDs used within the website are simply an MD5 hash of the user level for that account. This is extremely dangerous, as an attacker can easily enumerate through the user levels, testing each one and gaining access to every account with ease.
-Due to the numerous exploits possible with weak authentication, and the dangerous ability to get in to other accounts (including admins), this exploit is evaluated to be a \textbf{high} risk.
+Due to the numerous vulnerabilities possible with weak authentication, and the dangerous ability to get in to other accounts (including admins), this vulnerability is evaluated to be a \textbf{high} risk.
 \end{itemize}
 
 \subsubsection{Cause of Vulnerability}
-The exploits found each had varying causes, depending on which part of the website was being interacted with. These included:
+The vulnerabilities found each had varying causes, depending on which part of the website was being interacted with. These included:
 \begin{itemize}
 	\item Susceptibility to bruteforce attacks: The lack of a rate-limit or IP block on each account for the login form allows attackers to attempt as many times as they want, which makes bruteforce attacks possible. 
 	\item Weakly hashed passwords: The use of the MD5 hashing algorithm results in weak hashing security, which stems from either legacy code (from when MD5 was stronger) or poor security choices during the design of the system.
@@ -206,9 +206,9 @@ Enumerating the session IDs
 \subsubsection{Security Implications / Risk Level}
 RDP, or Remote Desktop Protocol, is a service used for remotely accessing machines across a network. While it is a useful tool for remote administration, it can be very heavily exploited by an attacker if not properly secured, as it gives almost full access to the machine if compromised. \\
 In this situation, the system was vulnerable to an RDP bruteforce. Using this vulnerability, it was possible to gain access to the 'ftp' user, creating a foothold in to the system which could be further exploited.\\
-Due to the risk of accessing accounts on the server machine, but still requiring passwords which could potentially mitigate the potential of exploitation, this exploit is classed at \textbf{medium} risk.
+Due to the risk of accessing accounts on the server machine, but still requiring passwords which could potentially mitigate the potential of exploitation, this vulnerability is classed at \textbf{medium} risk.
 \subsubsection{Cause of Vulnerability}
-This exploit stemmed from the RDP port (3389) being left open on the server. Having the default RDP port open allows threat actors to easily identify the service running on the port, giving away a potential entry point to the system. From there, any bruteforce program such as hydra or ncrack can be used to begin bruteforce attempts on the service.
+This vulnerability stemmed from the RDP port (3389) being left open on the server. Having the default RDP port open allows threat actors to easily identify the service running on the port, giving away a potential entry point to the system. From there, any bruteforce program such as hydra or ncrack can be used to begin bruteforce attempts on the service.
 \subsubsection{Steps to Replicate}
 \begin{itemize}
 	\item First, a list of potential usernames was collated from information gathered previously - this included usernames of known staff members (such as Stanley Jobson and Gabriel Shear), as well as common account names (such as guest and ftp). 
@@ -328,24 +328,11 @@ The cause of this vulnerability is simply not choosing a password that is sure e
 
 
 
-\section{SRV2 - Linux Server}
-\subsection{Username Enumeration}
-\subsubsection{Security Implications / Risk Level}
-\subsubsection{Cause of Vulnerability}
-\subsubsection{Steps to Reproduce}
-
-\subsection{SSH Bruteforce}
-\subsubsection{Security Implications / Risk Level}
-\subsubsection{Cause of Vulnerability}
-\subsubsection{Steps to Reproduce}
-
-
-
 \section{Ubuntu Client}
 \subsection{FTP Anonymous Access}
 \subsubsection{Security Implications / Risk Level}
 By default, FTP allows for access without password authentication through the 'anonymous' user. While this user does not have many permissions, it may be able to view some sensitive files and gain information about the host system.\\
-Due to the low level of permissions provided on the anonymous user, the risk for this exploit is \textbf{low}.
+Due to the low level of permissions provided on the anonymous user, the risk for this vulnerability is \textbf{low}.
 \subsubsection{Cause of Vulnerability}
 The anonymous user is enabled by default on FTP, so if the administrator does not strictly disable it then it will be accessible by threat actors.
 \subsubsection{Steps to Reproduce}
@@ -357,27 +344,136 @@ The anonymous user is enabled by default on FTP, so if the administrator does no
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.6]{img/ftp1.png}
+	\includegraphics[scale=0.4]{img/ftp1.png}
 	\caption{FTP access using anonymous user}
 \end{figure}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=0.6]{img/ftp2.png}
+	\includegraphics[scale=0.4]{img/ftp2.png}
 	\caption{Retrieving files from the server}
+\end{figure}
+\pagebreak
+
+\subsection{SSH Bruteforce}
+\subsubsection{Security Implications / Risk Level}
+SSH, or Secure Shell, is a service that allows users to gain command line access to a remote machine. While this is a useful tool for managing machines without having physical access, it also gives threat actors a lucrative target.\\
+One common method used by threat actors to gain access to SSH is an SSH bruteforce. Similar to the RDP bruteforce used on SRV1, this tries a lot of passwords repeatedly, hoping for one to be correct.\\
+While this exploit does have serious ramifications if executed correctly, the slow speed of SSH bruteforcing combined with the ease of use securing SSH sets the risk to \textbf{medium}.
+\subsubsection{Cause of Vulnerability}
+This vulnerability is caused by a few factors:
+\begin{itemize}
+	\item Lack of IP blocking - a common measure is to block IPs if they repeatedly try to access SSH incorrectly, forcing the attacker to use a botnet instead.
+	\item Lack of strong passwords - the passwords found for the accounts were both weak, appearing within the rockyou.txt wordlist. Choosing stronger passwords makes it much more difficult for the threat actor to effectively bruteforce.
+	\item Using the default SSH port - this is more of an issue with automated bots, but using the default SSH port (22) advertises the use of the port, giving easier access to the entry point for threat actors.
+\end{itemize}
+\subsubsection{Steps to Reproduce}
+\begin{itemize}
+	\item The usernames gained from viewing /etc/passwd through path traversal were collated in to a wordlist.
+	\item The tool hydra was again used to brute force, using the above wordlist for the usernames and rockyou.txt for passwords. The command used was:
+	\begin{verbatim}
+	hydra -L usernames.txt -P rockyou.txt 172.16.2.133 -t 4 ssh
+	\end{verbatim}
+	\item After allowing the bruteforce to run for a few hours, it produced two sets of credentials - 'hr\_kx:password' (Fig. 3.27), and 'gshear:swordfish' (Fig. 3.28).
+	\item These credentials were then tested for use with SSH. The hr\_kx user had no shell privileges, so could not be used to execute commands. The gshear user did have privileges, and was used to gain access to the system.
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.5]{img/133ssh1.png}
+	\caption{kr\_kx cracked}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/133ssh2.png}
+	\caption{gshear cracked}
+\end{figure}
+\pagebreak
+
+\subsection{Improper Access Controls}
+\subsubsection{Security Implications / Risk Level}
+Access controls are used to limit which users are allowed to access certain functionalities on a system. For example, only users with root access can edit important system files on Linux machines.\\
+In this case, read permissions were inadvertently left accessible to non-privileged users in the /var/www directory. This allowed for sensitive mysql data to be accessed in the conn.php script, which lead to more vulnerabilities being created.\\
+As the potential risks of this vulnerability can be so broad, and said risks are easily executable once access has been gained to the system, this vulnerability is assessed to be of \textbf{high} risk.
+\subsubsection{Cause of Vulnerability}
+This vulnerability is caused by a lack of consideration when configuring user access on files and services. This is a common mistake made by sysadmins when setting up a server, as making considerations for which levels of privilege each user should have is a time-consuming task.
+\subsubsection{Steps to Reproduce}
+\begin{itemize}
+	\item The first step was to navigate to the /var/www folder, where Apache web files are stored. This is a common site for improper access control - non-privileged users are often able to edit the files here, or view them and recover important information.
+	\item In the 'graphite' folder containing all site data, there was a file named 'conn.php'. A file like this is usually for handling the connection between the server and the database, so it was worth checking.\\
+	Inside, the details for the MySQL user 'auctuser' were stored in plaintext (Fig. 3.29).
+	\item With these details, it was possible to log in to the MySQL server using the command
+	\begin{verbatim}
+		mysql -u auctuser -p
+	\end{verbatim}
+	Followed by the password, 'figel'. Once in the database, it was possible to not only read data, but to insert data too.
+	\item One way this could be exploited is by achieving XSS on the homepage. Due to the way auctions are stored, without stripping HTML tags, it was possible to craft a special INSERT INTO query to insert XSS into the description field of the generated auction (Fig. 3.30).
+	\item With this done, the homepage could be refreshed to display an alert(1) box, showing the vulnerability working as intended (Fig. 3.31). This could be used as a method of persistence, continually stealing session IDs or logging their keystrokes using Javascript.
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/xss1.png}
+	\caption{Viewing MySQL details}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/xss2.png}
+	\caption{Injecting XSS through the DB}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.3]{img/xss3.png}
+	\caption{Demonstrating XSS}
+\end{figure}
+\pagebreak
+
+\section{SRV2 - Linux Server}
+\subsection{Username Enumeration}
+\subsubsection{Security Implications / Risk Level}
+Username enumeration allows threat actors to identify some or all of the users present on a  remote machine. While this may not seem dangerous on its own, when combined with other attacks (such as SSH or RDP bruteforce) it can enable further access than would otherwise be possible.\\
+In this case, using username enumeration allowed for an SSH bruteforce attack to occur, eventually leading to SSH access being gained on the machine.\\
+Due to the low potential payload of the vulnerability and relative difficulty to access, this vulnerability is assessed as \textbf{low} risk.
+\subsubsection{Cause of Vulnerability}
+There are a variety of ways usernames can be leaked by some services - in this case, the usernames were gained by using enum4linux to enumerate SIDs with null SMB credentials, yielding the username. Another common exploit is to use a malformed packet vulnerability in SSH along with a wordlist to bruteforce specific usernames \cite{userenum}.
+\subsubsection{Steps to Reproduce}
+\begin{itemize}
+	\item The username enumeration process was done with the tool enum4linux, included with Kali. The command used was:
+	\begin{verbatim}
+	enum4linux 172.16.2.140 -a
+	\end{verbatim}
+	This performs all common enumeration techniques on the target machine.
+	\item When completed, the program returned the results of enumerating SIDs using a null SMB credential attack. This yielded the username 'ktuser', with SID S-1-22-1-1000(Fig. 3.32).
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/userenum1.png}
+	\caption{Enumerating users}
 \end{figure}
 
 \subsection{SSH Bruteforce}
 \subsubsection{Security Implications / Risk Level}
+This SSH bruteforce is functionally identical to the one performed on the Ubuntu machine, and therefore has the same risk rating of \textbf{medium}.
 \subsubsection{Cause of Vulnerability}
+Identical to Ubuntu SSH - combination of lack of IP blocking, lack of strong passwords, and using the default SSH port.
+\subsubsection{Steps to Reproduce}
+\begin{itemize}
+	\item Again, Hydra was used for this SSH bruteforce. Instead of just one bruteforce running, multiple were set up concurrently - each with different rules. These were:
+	\begin{itemize}
+		\item A standard bruteforce using rockyou.txt
+		\item A bruteforce using the top 10 million passwords list
+		\item A bruteforce using the xato net passwords list
+		\item A bruteforce using an exhaustive lowercase search
+		\item A bruteforce using an exhaustive lowercase/uppercase search
+		\item A bruteforce using an exhaustive lowercase/uppercase/numbers/symbols search
+	\end{itemize}
+	This was done to maximise the chances that at least one would succeed.
+	\item After allowing the bruteforces to run, the exhaustive lowercase search came up with a result - 'ktuser:aaa' (Fig. 3.33). This showed that the multiple bruteforce attack was effective, as the string 'aaa' does not appear in rockyou until a few thousand in, while it only took less than 300 attempts with an exhaustive search.
+	\item The credentials could then be used to SSH in to the machine successfully, gaining a shell.
+\end{itemize}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.6]{img/140ssh1.png}
+	\caption{Enumerating users}
+\end{figure}
 
-\subsubsection{Steps to Reproduce}
-\subsection{Improper Access Controls}
-\subsubsection{Security Implications / Risk Level}
-	read conn.php
-	mysql access
-	xss
-\subsubsection{Cause of Vulnerability}
-\subsubsection{Steps to Reproduce}
 
 
 
@@ -395,10 +491,12 @@ The anonymous user is enabled by default on FTP, so if the administrator does no
 In a secure system, principles such as the 'rule of least privilege' should be used.
 \subsection{Weak passwords}
 
-\section{SRV2 - Linux Server}
-
 \section{Ubuntu Client}
 \subsection{SSH bruteforce}
+
+\section{SRV2 - Linux Server}
+
+
 
 \chapter{Conclusion}
 
