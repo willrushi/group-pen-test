@@ -1,5 +1,13 @@
 \begin{thebibliography}{}
 
+\bibitem[Lockheed-Martin, 2015]{lockheed}
+Lockheed-Martin (2015).
+\newblock Gaining the advantage: Applying cyber kill chain® methodology to
+  network defense.
+\newblock
+  \url{https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/documents/cyber/Gaining_the_Advantage_Cyber_Kill_Chain.pdf}.
+\newblock Last checked on 14th March, 2020.
+
 \bibitem[rapid7, 2018]{userenum}
 rapid7 (2018).
 \newblock Ssh username enumeration.

@@ -5,9 +5,9 @@
 \usepackage{url}
 \bibliographystyle{apalike} 
 
-\title{replace title}
-\author{replace author}
-\date{replace date}
+\title{Penetration Test Report - KnifeTuna}
+\author{The Cyber Inquisition}
+\date{14th March 2020}
 
 \begin{document}
 \maketitle
@@ -15,20 +15,76 @@
 \listoffigures
 
 \chapter{Introduction}
+This report documents the findings from a penetration test conducted by The Cyber Inquisition on KnifeTuna. Included is an executive summary detailing our methodology and summary of findings, a technical key findings section explaining each exploit in depth, and a remedial action section detailing our recommended action for each exploit.
 
 \chapter{Executive Summary}
-\section{Planning}
-\subsection{Approach}
-\subsection{Scope}
-\subsection{Objectives}
 \section{Methodology}
-\subsection{Information Gathering}
-\subsection{System Attacks}
+In order to provide a realistic penetration test, and to provide the best recommendations to keep your company safe, we worked as a hacker would. To do this, we used the 'Lockheed Martin cyber kill chain', a 'model for identification and prevention of cyber intrusion activity' \cite{lockheed}.\\ 
+The Cyber kill chain is a model used to emulate how a hacker would go about attacking a system. It can be difficult to model an attacker, and no set model is able replicate their behaviour exactly, so we worked in combination with our own experience as trained cyber professionals by customising the model as we went along, to provide as full a report as possible. We have broken our process to 3 general steps: reconnaissance, testing, and evaluation.
+\subsection{Reconnaissance}
+Reconnaissance involves us combining open source intelligence, online searches, and social media with scanning of the website. This allows us to discover where major leads are, developing a list of possible areas to investigate - including things such as network scans for service versions, operating systems and common open ports. Social media is also a great place to look, as it could tell us key information about employees - this is a common avenue for threat actors to explore.
+\subsection{Testing}
+Testing allowed us to test whether our suspicions were correct, since many of the leads we come across during reconnaissance turn out to be false alarms. This testing takes the form of doing just enough to prove a vulnerability exists - known as a 'proof of concept' - this means keeping your system safe and aims not to leave any real impact on your company.
+\subsection{Evaluation}
+Evaluation is where we take the knowledge we've gained and work to predict the risk associated, including aiming to find out how much information could be at risk. To do this we use industry standard risk rating methods, ours of choice being the OWASP risk rating methodology. This allows us to cover the general impact of the risk/vulnerability to both the computer systems and the company as a whole. Another potential methodology is OSTMM STAR, however this is a certification and therefore is stricter and is less customisable.
+\subsection{Risk Rating}
+OWASP(Open Web Application Security Project) risk rating methodology is a generalised system for calculating risk of a cyber attack from a given vulnerability. It is widely used across the industry and allows a way to frame a cyber attack into 4 categories -  Note, Low, Medium, and Critical. This rating consists of two key components, the likelihood of attack and the impact of an attack. We give each of these quantitative numbers between 0-9.\\
+ We broke these categories down in to 4 sections as described below. This model requires us as penetration testers to make an educated estimate at all factors and is designed to be a flexible framework, customisable where needed. We have chosen to use it since we believe it to be one of the best ways to show real world risk and outcomes of vulnerabilities.
+\subsubsection{Threat Agent Factors}
+A subsection of likelihood, threat agent factors cover the reasons and skill level needed for someone to attack your system. This itself is made up of skill level, motivation, opportunity and size.\\
+\begin{itemize}
+	\item Skill level covers the required ability of the attacker, starting from 0 as someone with no technical knowledge to 9 a skilled penetration tester or exploiter. The higher the skill level of those attacking, the greater damage that can be caused.
+	\item Motivation is the reason someone would have to attack your system, whether that would be a disgruntled employee or how much someone would believe they can be rewarded for success.
+	\item Opportunity refers to the amount of resources the attacker would have to attack a system. This means either raw processing power, time spent, or potential monetary investment needed to attack.
+	\item Finally, size is also an important factor. This specifies the range of people who are able to attack - with the least being a very specific subset of attackers(1), and a worst case scenario(9) meaning basically anyone can execute an attack. For size this does not necessarily refer to skill level to do the attack, just the amount of people who could have the skill level to perform it.
+\end{itemize}
+
+\subsubsection{Vulnerability factors}
+Another subsection of likelihood, vulnerability factors deal with the exploitability of the specific vulnerability. This is comprised of ease of discovery, ease of exploit, awareness, and intrusion detection.
+\begin{itemize}
+	\item Ease of discovery specifies how easy it would be for an attacker to actively discover the vulnerabilities, a worst case scenario being that automatic tools exist and are able to quickly scan a system to discover the vulnerability.
+	\item Similar to ease of discovery , ease of exploitation is how easy it is to exploit the system, the worst having automated tools.
+	\item Awareness is the amount that is publicly known about the vulnerability, for an example if a company was in the news for a data breach using a certain vulnerability awareness would be high.
+	\item Intrusion Detection covers the amount of logging and flagging that goes on when attacked, this includes detection while attack is happening.
+\end{itemize}
+
+\subsubsection{Technical Impact}
+A subset of impact, this section covers the damage to a computer system from an attack. This includes loss of confidentiality, loss of integrity, loss of availability and loss of accountability. 
+\begin{itemize}
+	\item Loss of confidentiality is the loss of the secrecy around information, as well as how much secret or personally identifiable information could be affected.
+	\item Loss of integrity determines whether a vulnerability allows someone to alter information in the system, such as editing contact details or adding a user account.
+	\item Loss of availability affects whether the vulnerability is able to stop the system from functioning in its intended way, such as if users are able to access it.
+	\item Loss of accountability is similar to intrusion detection - if the vulnerability is executed, is the attacker able to cover up their tracks, and can an attacker possibly hide other activities they have done?
+\end{itemize}
+
+\subsubsection{Business Impact}
+A subsection of impact, business impact is about whether the vulnerability could cause risk to business operations and finances. Under this banner is financial damage, reputational damage, non-compliance and privacy violation. 
+\begin{itemize}
+	\item Financial damage is exactly what it sounds like - can this vulnerability lead to direct financial losses including money theft and lost revenue due to unavailability?
+	\item Reputational damage is important as it covers the qualitative damage of a cyber attack - if a vulnerability could have easily been patched or a company is frequently victim to large attacks clients may look poorly on the company, here we measure that risk.
+	\item Non-compliance is whether the company is breaking any laws or any generally expected standards that they should be following by allowing this vulnerability (such as GDPR).
+	\item Finally, privacy violation states the number of people who are affected by the data leaks or possible data leaks.
+\end{itemize}
+
+
 \section{Summary of Findings}
+To begin, we performed a scan with the vulnerability scanning software Nessus to look for initial exploits (Appendix C). From this, we were able to research and exploit these vulnerabilities on your systems:
+\begin{itemize}
+	\item Auction Site - Path Traversal
+	\item Auction Site - SQL Injection
+	\item Auction Site - Weak Authentication
+	\item SRV1 - RDP Bruteforce
+	\item SRV1 - Insecure Privileges
+	\item SRV1 - Weak Passwords
+	\item Ubuntu Client - FTP Anonymous Access
+	\item Ubuntu Client - SSH Bruteforce
+	\item Ubuntu Client - Improper Access Controls
+	\item SRV2 - Username Enumeration
+	\item SRV2 - SSH Bruteforce
+\end{itemize}
+
 
 \chapter{Key Findings}
-
-
 \section{Auction Site}
 This section covers the vulnerabilities found with the user-facing auction site.
 \subsection{Path Traversal}
@@ -478,27 +534,80 @@ Identical to Ubuntu SSH - combination of lack of IP blocking, lack of strong pas
 
 
 
-\chapter{Recommendations}
+\chapter{Remedial Action}
+\section{Risk Assessment}
+
+Using the OWASP risk assessment methodology, we assessed each of the discovered vulnerabilities and scored them in terms of importance. To do this we made use of the OWASP risk assessment framework paired with the OWASP risk rating calculator. This calculator - based in excel - allowed us to look at the likelihood of a vulnerability being exploited, and give it an appropriate risk rating (Fig. 4.1).
+
+The calculator features a risk assessment and a risk rating. These worksheets cover things such as threat agent factors, vulnerability factors, technical and business impacts, and overall risk severity. The risk rating worksheet also takes in to account the overall skill level needed to conduct an attack, the ease of the exploit, and the ease of discovery (Fig. 4.2).
+
+As with all technical security, make sure to keep systems updated as much as possible, as outdated systems often have unpatched security holes that are later fixed with updates.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.4]{img/riskcalc.JPG}
+	\caption{a}
+\end{figure}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=0.3]{img/riskrating.JPG}
+	\caption{a}
+\end{figure}
+\pagebreak
+
+
 \section{Auction Site}
-\subsection{Path Traversal}
+\subsection{Path Traversal - Medium Risk}
+Path traversal is a relatively simple issue to fix - instead of using PHP's include function to embed images, link directly to the image. This prevents the abuse of the include function entirely, as image links cannot be used to read non-image files as long as the server is configured correctly.\\ If the include function needs to be used for any reason with user input, a whitelist should be implemented to restrict file read to only certain file names or extensions. 
 \subsection{SQL Injection}
+SQL injection can be a more difficult fix, as it requires sanitization of all input fields on the website that interact with the database. The current method for sanitizing user input for SQL is by using 'prepared statements'. These allow SQL queries to treat user input as strictly data, instead of having side effects such as being able to alter queries, so normally dangerous characters like quotes can be input safely.
 \subsection{Weak Authentication}
+To fix the weak authentication for the login form bruteforce, a few measures could be taken:
+\begin{itemize}
+	\item Implement an IP block that restricts an IP from attempting to sign in after too many failed attempts. This can be done with libraries such as APCu in PHP.
+	\item Implement an account-based block that locks an account after a certain amount of failed attempts. This can be done with an extra field on the accounts table monitoring the number of failed attempts.
+	\item Add some kind of anti-bot measure, such as a captcha or randomised question. This prevents bots from easily spamming massive amounts of requests to the login form.
+\end{itemize}
+To fix the weak authentication for user sessions, the cookie would likely need to be redesigned. A common way of handling sessions is by using the \$\_SESSION superglobal in PHP, which can be used to store individual user data which can later be referenced across the site. This provides a completely random string for the cookie instead of a predictable one, adding to the security of the site.
 
 \section{SRV1 - Windows Server}
-\subsection{RDP bruteforce}
-	change or close port
+\subsection{RDP bruteforce - medium}
+As RDP can be very dangerous if left open to an attacker, it is usually a good idea to close the RDP port to external hosts and force users to tunnel in through a VPN in order to use RDP.\\ If this is not possible, the RDP port should be changed to obfuscate the use of the port, as well as making sure all passwords for RDP-enabled users are very secure.
 \subsection{Insecure privileges}
-In a secure system, principles such as the 'rule of least privilege' should be used.
+In a secure system, principles such as the 'rule of least privilege' should be used - this states that users be allocated the minimum amount of privileges possible in order to perform their necessary tasks. This usually involves users having 0 privileges by default and increasing them manually based on their role; while this is time consuming, it eliminates the threat of insecure privilege based vulnerabilities.
 \subsection{Weak passwords}
+Weak passwords are an extremely common vulnerability, and as stated previously, the responsibility is on the administrators of the system to set a strong password policy to ensure that all users have secure passwords.
 
 \section{Ubuntu Client}
-\subsection{SSH bruteforce}
+\subsection{FTP Anonymous Access - Low}
+Fixing FTP anonymous access is as simple as disabling the feature in the ftp settings. This can usually be done by changing "anonymous\_enable" in the vsftpd.conf file to NO instead of YES.
+\subsection{SSH Bruteforce - Medium}
+There are a few methods that can be implemented to discourage SSH bruteforcing:
+\begin{itemize}
+	\item The port can be changed from the default, 22, to mask the usage of the port.
+	\item It is possible to implement an IP block with SSH, blocking certain IPs if they fail login attempts too many times in a row.
+	\item Instead of using a password, it's possible to switch to public key only authentication with SSH. This involves logging on with an SSH key instead of a password, which makes it close to impossible to bruteforce.
+	\item If public key authentication is not possible, users should pick very strong passwords, making it much more difficult to bruteforce.
+\end{itemize}
+\subsection{Improper Access Control - High}
+Similarly to configuring insecure privileges on SRV1, Improper Access Control should be configured by only allowing file access to users that absolutely need it. For example, only allowing read permissions on the /var/www folder to www-data would have avoided the issue of the MySQL credentials being recovered, allowing for XSS injection. These kinds of checks should be made across the system, covering any important files and folders.
 
 \section{SRV2 - Linux Server}
-
+\subsection{Username Enumeration - Low}
+While username enumeration is not a high priority vulnerability to fix, it is still worth patching the potential security hole it brings. The fixes for the methods stated above include:
+\begin{itemize}
+	\item enum4linux null SMB login - Change the SMB settings to only allow authorised users to access.
+	\item SSH malformed packet exploit - Update to a newer version of SSH that does not contain this vulnerability.
+\end{itemize}
+\subsection{SSH Bruteforce - Medium}
+The methods for securing SSH on this machine are identical to the ones used to secure SSH on the Ubuntu box.
 
 
 \chapter{Conclusion}
+In conclusion, we believe there are some serious vulnerabilities with the infrastructure running KnifeTuna, with many of these being at a critical level, potentially causing massive damage to the company.\\
+We suggest that the technical team at KnifeTuna either begins to work full-time on securing these vulnerabilities, or potentially look in to hiring external security companies to assist with the process.\\
+While these vulnerabilities are serious, the methods for fixing them are definitely achievable for the company, with many being very trivial to implement. There should be no large-scale system redesign needed to solve the issues found.\\
+
+
 
 \chapter{Appendices}
 \section{Appendix A: Python bruteforce script}
@@ -513,6 +622,8 @@ In a secure system, principles such as the 'rule of least privilege' should be u
 	\includegraphics[scale=0.4]{img/cookiescript.png}
 	\caption{Enumerating the session cookies}
 \end{figure}
+\section{Appendix C: Nessus Scan}
+Attached as Knifetuna\_Nessus.pdf
 
 \bibliography{pentest}
 
